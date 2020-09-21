@@ -1,0 +1,83 @@
+// import React from "react";
+
+
+{
+    "logo": "../img/Logotipo/logo.png",
+    "valenPic": "../img/foto-avatar-588.png",
+    "myWorks": "../img/myworks-19.png",
+    "worksMobile": "../img/mobile/Myworkmobile-20.png",
+    "mainBanner": "../img/Bannerdesktop-1920.png",
+    "bannerMobile": "../img/mobile/bannnermobile-480.jpg",
+
+
+// Cover & Carousel Swipe Slide pictures:
+
+    "cover1": "../img/Yum/yum-portada-960.jpg",
+    "cover2": "../img/STB/STB-Portada-960.jpg", //STB
+    "cover3": "../img/SDO/sdo-portada-960.jpg", //SDO
+    "cover4": "../img/Colores/colores-portada-960.jpg",
+    "cover5": "../img/HCB/HCB-Portada-960.jpg", //HCB
+    "cover6": "../img/Calza/calza-portada-960.jpg",
+    "cover7": "../img/Malteadas/malteadas-portada-960.jpg",
+    "cover8": "../img/Bonf/bonf-portada-960.jpg",
+    "cover9": "../img/CHH/chhportadas-960.jpg",
+    "cover10": "../img/Yumlato/yumlaportadas-960.jpg",
+
+// Cover mobile pictures:
+
+    "coverMbl1": "../img/Yum/yum-portada-480.jpg",
+    "coverMbl2": "../img/STB/STB-Portada-480.jpg", //STB
+    "coverMbl3": "../img/SDO/sdo-portada-480.jpg", //SDO
+    "coverMbl4": "../img/Colores/colores-portada-480.jpg",
+    "coverMbl5": "../img/HCB/HCB-Portada-480.jpg", //HCB
+    "coverMbl6": "../img/Calza/calza-portada-480.jpg",
+    "coverMbl7": "../img/Malteadas/malteadas-portada-480.jpg",
+    "coverMbl8": "../img/Bonf/bonf-portada-480.jpg",
+    "coverMbl9": "../img/CHH/chhportadas-480.jpg",
+    "coverMbl10": "../img/Yumlato/yumlaportadas-480.jpg",
+
+// Projects images desktop
+
+    "project1": "../img/Yum/yum-1920.jpg",
+    "project2": "../img/STB/STB-1920.jpg",
+    "project3": "../img/SDO/SDO-1920.jpg",
+    "project4": "../img/Colores/Colores-1920.jpg",
+    "project5": "../img/HCB/HCB-1920.jpg",
+    "project6": "../img/Calza/Calza-1920.jpg",
+    "project7": "../img/Malteadas/Malteadas-1920.jpg",
+    "project8": "../img/Bonf/Bonf-1920.jpg",
+    "project9": "../img/CHH/chhinternas-1920.jpg",
+    "project10": "../img/Yumlato/yumlato-1920.jpg",
+
+// Projects images mobile
+
+"projectMb1": "../img/Yum/yum-1024.jpg",
+"projectMb2": "../img/STB/STB-1024.jpg",
+"projectMb3": "../img/SDO/SDO-1024.jpg",
+"projectMb4": "../img/Colores/Colores-1024.jpg",
+"projectMb5": "../img/HCB/HCB-1024.jpg",
+"projectMb6": "../img/Calza/Calza-1024.jpg",
+"projectMb7": "../img/Malteadas/Malteadas-1024.jpg",
+"projectMb8": "../img/Bonf/Bonf-1024.jpg",
+"projectMb9": "../img/CHH/chhinternas-1024.jpg",
+"projectMb10": "../img/Yumlato/yumlato-1024.jpg"
+}
+
+// default export ValenWorks
+// export CvrMobile;
+// export CvrDsktop;
+// export PrjDsktop;
+// export PjtMobile;
+// Amount of projects
+// $projects: (
+//     1 $cover-1 $coverMbl-1 $project-1 $projectMb-1,
+//     2 $cover-2 $coverMbl-2 $project-2 $projectMb-2,
+//     3 $cover-3 $coverMbl-3 $project-3 $projectMb-3,
+//     4 $cover-4 $coverMbl-4 $project-4 $projectMb-4,
+//     5 $cover-5 $coverMbl-5 $project-5 $projectMb-5,
+//     6 $cover-6 $coverMbl-6 $project-6 $projectMb-6,
+//     7 $cover-7 $coverMbl-7 $project-7 $projectMb-7,
+//     8 $cover-8 $coverMbl-8 $project-8 $projectMb-8,
+//     9 $cover-9 $coverMbl-9 $project-9 $projectMb-9,
+//     10 $cover-10 $coverMbl-10 $project-10 $projectMb-10,
+

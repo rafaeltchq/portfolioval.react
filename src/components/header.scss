@@ -1,0 +1,131 @@
+@import "../scss/img-post";
+@import "../scss/mixins";
+// @import "../scss/mobile";
+header {
+    position: fixed;
+    z-index: 1000;
+    min-width: 100%;
+    margin: 0;
+    @include transition-fade;
+
+    .nav {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 0 auto;
+        max-width: $vw-width;
+        margin-top: 2.3rem;
+        @include transition-fade;
+        #logo:not([src]) {
+            content: $logo;
+            max-height: 4rem;
+            margin: 0.7rem 0 0.7rem 5vw;
+        }
+
+        &__menu {
+            margin: 0 8vw 0 auto;
+            padding: 0;
+            align-self: center;
+            cursor: default;
+        }
+        &__menu:focus {
+            outline: none;
+        }
+        .land {
+            color: white;
+            border-bottom: 1px solid white;
+            cursor: context-menu;
+        }
+
+        &__item {
+            display: inline-block;
+            list-style: none;
+            color: white;
+            cursor: default;
+            margin: 0 1rem;
+            font-size: 0.85rem;
+            font-weight: 400;
+            &.menu_mobile {
+                display: none;
+            }
+        }
+        &__link {
+            text-decoration: none;
+            color: white;
+            @include transition-fade;
+            &:hover,
+            &:focus {
+                outline: 0;
+                color: silver;
+                @include transition-fade;
+            }
+        }
+    }
+}
+.scrolled {
+    background: rgba(0, 0, 0, 0.6);
+    @include transition-fade;
+    nav {
+        margin-top: 0;
+        @include transition-fade;
+    }
+}
+@include respond-to(mobile) {
+    header {
+        .nav {
+            position: relative;
+            margin-top: 0;
+            #logo {
+                margin: 0.3rem 0 0.3rem 5vw;
+            }
+            .land {
+                border-bottom: none;
+            }
+            &__menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                margin: 0;
+                position: absolute;
+                transform: translate(50%, 50%);
+                top: 100%;
+                right: 50%;
+                z-index: 50;
+                visibility: hidden;
+            }
+            &__item {
+                opacity: 0;
+                transition: all 0.2s cubic-bezier(0, 0.995, 0.99, 1) 0.5s;
+                margin: 1rem 0;
+                font-size: 1.8rem;
+                &:hover,
+                &:focus {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    @include transition-fade;
+                }
+                // &.dropdown-6,
+                .triangle-up {
+                    display: none;
+                }
+                &.menu_mobile {
+                    display: block;
+                }
+            }
+        }
+        .nav:target,
+        .nav--open {
+            .nav {
+                &__menu {
+                    visibility: visible;
+                }
+        
+                &__item {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,180 @@
+@include respond-to(mobile) {
+    header {
+        .nav {
+            position: relative;
+            margin-top: 0;
+            #logo {
+                margin: 0.3rem 0 0.3rem 5vw;
+            }
+            .land {
+                border-bottom: none;
+            }
+            &__menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                margin: 0;
+                position: absolute;
+                transform: translate(50%, 50%);
+                top: 100%;
+                right: 50%;
+                z-index: 50;
+                visibility: hidden;
+            }
+            &__item {
+                opacity: 0;
+                transition: all 0.2s cubic-bezier(0, 0.995, 0.99, 1) 0.5s;
+                margin: 1rem 0;
+                font-size: 1.8rem;
+                &:hover,
+                &:focus {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    @include transition-fade;
+                }
+                &.dropdown-6,
+                .triangle-up {
+                    display: none;
+                }
+                &.menu_mobile {
+                    display: block;
+                }
+            }
+        }
+        #menu_desktop {
+            display: none;
+        }
+    }
+    .main-banner {
+        #mainBanner:not([src]) {
+            content: $banner-mobile;
+        }
+        h2 {
+            display: none;
+        }
+    }
+    .intro-text {
+        flex-direction: column;
+        padding: 1rem 2.6rem;
+        margin: 0.5rem 0;
+        img,
+        .bio-text {
+            max-width: 100%;
+            margin: 0;
+        }
+        .bio-text {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            div {
+                #bio-es,
+                #bio-en {
+                    text-align: left;
+                    line-height: 1.7rem;
+                }
+            }
+            #translate {
+                font-size: 1rem;
+                bottom: -12%;
+            }
+        }
+    }
+    .banner-1 {
+        height: 180px;
+        &-works:not([src]) {
+            content: $works-mobile;
+            max-width: 90%;
+            // width
+            // top: 16%
+        }
+        .left-roll {
+            left: 2rem;
+        }
+    }
+    .cover {
+        flex-direction: column;
+
+        &-post {
+            position: relative;
+            max-width: 100%;
+            &-overlay {
+                display: none;
+            }
+            &-title {
+                position: relative;
+                opacity: 1;
+                overflow: hidden;
+                // height: 40px;
+                top: 0;
+                left: 0;
+                transform: translate(0, 0);
+                p {
+                    display: none;
+                }
+                h3 {
+                    margin: 0.4rem 0;
+                    width: 100%;
+                    font-size: 5.5vw;
+                    @include slide-out-l;
+                }
+                &.left-in {
+                    h3 {
+                        color: $fontColour;
+                        left: 0%;
+                        @include slide-in-l;
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond-to(mb_tablet) {
+    .project {
+        @each $index, $cover, $mobile, $proj, $name in $projects {
+            &-#{$index}:not([src]) {
+                @include project($name);
+            }
+        }
+    }
+    @each $index, $cover, $mobile in $projects {
+        .cover-post-#{$index}:not([src]) {
+            @include portada($mobile);
+        }
+    }
+    footer {
+        padding: 0;
+        div:first-child {
+            flex-direction: column;
+            text-align: center;
+            white-space: normal;
+            hr {
+                display: block;
+                order: 0;
+                height: 1px;
+                border-width: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                margin: 0.5rem 0;
+            }
+            p {
+                font-size: 0.5rem;
+                margin: 0.1rem 0;
+            }
+            p:last-child {
+                order: 3;
+                margin-bottom: 0.5rem;
+            }
+            .socials {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                width: 85%;
+                margin: 0 auto;
+                order: -1;
+                P {
+                    font-size: 1rem;
+                    order: 0;
+                }
+            }
+        }
+    }
+}

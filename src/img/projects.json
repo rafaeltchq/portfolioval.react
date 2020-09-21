@@ -1,0 +1,79 @@
+{
+    "folder": "../img/",
+    "url": {
+        "SlideCvrMob": "Cover480.jpg",
+        "CoverDesktop": "Cover960.jpg",
+        "pageMobile": "1024.jpg",
+        "pageDesktop": "1960.jpg"
+    },
+    "Valen": {
+        "logo": "Logotipo/logo.png",
+        "valenPic": "foto-avatar-588.png",
+        "myWorks": "myworks-19.png",
+        "worksMobile": "mobile/Myworkmobile-20.png",
+        "mainBanner": "Bannerdesktop-1920.png",
+        "bannerMobile": "mobile/bannnermobile-480.jpg"
+    },
+    "projects":[
+        {
+            "id": "01",
+            "name": "Yum",
+            "Title": "Project: YumBox App Mobile",
+            "Detail": "UX/UI Design - Brand Design - Graphic Design"
+        },
+        {
+            "id": "02",
+            "name": "STB",
+            "Title": "Project: Lookbook Redesign",
+            "Detail": "UI Design"
+        },
+        {
+            "id": "03",
+            "name": "SDO",
+            "Title": "Project: Season Redesign",
+            "Detail": "UX/UI Design - Brand Design - Graphic Design"
+        },
+        {
+            "id": "04",
+            "name": "Colores",
+            "Title": "Project: Editorial Libro de los Colores",
+            "Detail": "Editorial Design - Graphic Design"
+        },
+        {
+            "id": "05",
+            "name": "HCB",
+            "Title": "Project: Newsletter Sketch",
+            "Detail": "UI Design"
+        },
+        {
+            "id": "06",
+            "name": "Calza",
+            "Title": "Project: Web Design",
+            "Detail": "UX/UI Design - Content Creation"
+        },
+        {
+            "id": "07",
+            "name": "Malteadas",
+            "Title": "Project: Brand Identity",
+            "Detail": "Content Creation - UX/UI Design - Art Director"
+        },
+        {
+            "id": "08",
+            "name": "Bonf",
+            "Title": "Project: Corporate Manual",
+            "Detail": "Editorial Design - Graphic Design"
+        },
+        {
+            "id": "09",
+            "name": "CHH",
+            "Title": "Project: Logo Design",
+            "Detail": "Personal brand - Graphic Design"
+        },
+        {
+            "id": "10",
+            "name": "Yumlato",
+            "Title": "Project: Brand Identity",
+            "Detail": "Graphic proposal - Graphic Design"
+        }    
+    ]
+}
