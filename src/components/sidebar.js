@@ -1,13 +1,15 @@
 import React from 'react';
 import Hamburger from "react-hamburgers";
-import { Spring } from "react-spring/renderprops";
+import { useSpring, animated } from "react-spring";
 // import useMeasure from "./useMeasure";
 import "../scss/hamburgers/hamburgers.scss";
 import "./sidebar.scss";
 
 
 export default function SideBar(props) {
-  
+  const { x } = useSpring({
+    x: props.active ? 0 : 70
+  })
   // console.log(props.active);
   // const SplashDiv = () => {return <div className="splash"></div>}
   return (
@@ -17,10 +19,10 @@ export default function SideBar(props) {
           type="slider"
           onClick={props.trigger}
         />
-      
-      <Spring >
-          <div style={ transform: `scale(${props.active ? 1 : 0}`} className="splash"></div>
-      </Spring>
+        <animated.div className="splash"
+        style={{ transform: x.interpolate(x => `translate(${ x * -1 }%, 0%)`)}} > 
+        </animated.div>
+          
     </div>
   )
 }

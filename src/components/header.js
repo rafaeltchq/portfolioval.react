@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from "wouter"
 import SideBar from "./sidebar"
-
+// import { Transition } from "react-spring/renderprops";
 import './header.scss'
 // import './sidebar.scss'
 
@@ -30,6 +30,8 @@ export default function Header() {
             <nav className="nav dropdown" role="navigation">
                 <Link to="/"><a><img id="logo" alt="Logo" /></a></Link>
                 <NavMenu />
+                
+
                 <SideBar
                 active={open}
                 trigger={Toggle}
