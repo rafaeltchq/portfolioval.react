@@ -1,0 +1,134 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+
+// calculate a circle's circumference based on radius
+@function circumference($r) {
+  $pi: 3.141592653;
+  @return 2 * $pi * $r;
+}
+
+// ---------------------------
+// Main Navigation Menu
+// ---------------------------
+
+.nav {
+  // Toggle Button
+  // position: relative;
+  &__toggle {
+    display: none;
+    @include respond-to(mobile) {
+      display: inline-block;
+      position: absolute;
+      z-index: 1000;
+      padding: 0;
+      border: 0;
+      width: 70px;
+      height: 70px;
+      background: transparent;
+      outline: 0;
+      right: 3%;
+      top: 6%;
+      border-radius: 50%;
+      // transition: background-color 0.15s linear;
+    }
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    button {
+      z-index: 1000;
+    }
+  }
+
+  // ---------------------------
+  // SVG Menu Icon
+  // ---------------------------
+
+  .menuicon {
+    display: block;
+    cursor: pointer;
+    color: white;
+    transform: rotate(0deg);
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    & g line,
+    & g circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+    & g line {
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: transform 0.25s ease-in-out;
+    }
+    & g circle {
+      transition: stroke-dashoffset 0.3s linear 0.1s;
+      stroke-dashoffset: circumference(23); //23 is the <circle>'s radius
+      stroke-dasharray: circumference(23);
+    }
+  }
+}
+// ---------------------------
+// Circular Splash Background
+// ---------------------------
+
+//  .splash {
+//   position: absolute;
+//   top: 40px;
+//   right: 40px;
+//   width: 1px;
+//   height: 1px;
+
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   border-radius: 50%;
+//   background-color: $splash-color;
+
+// screen diameter can be 142vmax at most,
+// circle needs to be twice that size to cover it
+// width: 84vmax;
+// height: 84vmax;
+// top: 0;
+// left: 0;
+// transform: scale(0.1);
+// transform-origin: 50% 50%;
+// transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+// transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+// will-change tells the browser we plan to
+// animate this property in the near future
+// will-change: transform;
+// }
+// }
+// }
+// ---------------------------
+// Active State
+// ---------------------------
+//scale the background circle to full size
+// .nav:target,
+// .nav--open {
+//   > .splash::after {
+//     transform: scale(1);
+//   }
+
+//animate the menu icon
+.menuicon.trigged {
+  color: white;
+  transform: rotate(180deg);
+
+  & g circle {
+    stroke-dashoffset: 0;
+  }
+  & g line:nth-child(1),
+  & g line:nth-child(4) {
+    opacity: 0;
+  }
+  & g line:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  & g line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
