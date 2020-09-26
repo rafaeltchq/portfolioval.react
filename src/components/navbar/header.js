@@ -4,16 +4,16 @@ import NavMenu from "./navmenu";
 import ToggleBtn from "./toggleButton";
 import "./header.scss";
 import MenuItems from "./menu-items";
-// import { Transition } from "react-spring/renderprops";
+import Slider from "../slider/slider";
 
 export default function Header() {
-  const MenuItemsDsktop = () => {
-    if (window.innerWidth > 480) {
-      return <MenuItems />
-    } else {
-      return <></>
-    }
-  }
+  // const MenuItemsDsktop = () => {
+  //   if (window.innerWidth > 480) {
+  //     return <MenuItems />
+  //   } else {
+  //     return <></>
+  //   }
+  // }
 
   const [open, NewSte] = useState(false);
   const Toggle = () => NewSte(!open);
@@ -21,11 +21,12 @@ export default function Header() {
   const NavBar = () => {
     return (
       <nav className="nav dropdown" role="navigation">
-        <Link to="/"><a><img id="logo" alt="Logo" /></a></Link>
-        <MenuItemsDsktop />
+        <Link to="/"><img id="logo" alt="Logo" /></Link>
+        <MenuItems className={"nav__menu"} />
         <ToggleBtn trigger={Toggle}
           trigged={open}
         />
+        <Slider />
       </nav>
     );
   };

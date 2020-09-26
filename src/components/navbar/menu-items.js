@@ -1,11 +1,10 @@
 import React from 'react';
 import "./header.scss";
 import { Link } from "wouter";
-const MenuItems = () => {
-    
-    
+
+const MenuItems = (props) => {
     return (
-       <ul className="nav__menu">
+       <ul className={props.className}>
         <li className="nav__item land">
           <Link to="#" className="nav__link">HOME</Link>
         </li>

@@ -70,6 +70,24 @@
     }
   }
 }
+.menuicon.trigged {
+  color: white;
+  transform: rotate(180deg);
+
+  & g circle {
+    stroke-dashoffset: 0;
+  }
+  & g line:nth-child(1),
+  & g line:nth-child(4) {
+    opacity: 0;
+  }
+  & g line:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  & g line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
 // ---------------------------
 // Circular Splash Background
 // ---------------------------
@@ -114,21 +132,21 @@
 //   }
 
 //animate the menu icon
-.menuicon.trigged {
-  color: white;
-  transform: rotate(180deg);
+// .menuicon.trigged {
+//   color: white;
+//   transform: rotate(180deg);
 
-  & g circle {
-    stroke-dashoffset: 0;
-  }
-  & g line:nth-child(1),
-  & g line:nth-child(4) {
-    opacity: 0;
-  }
-  & g line:nth-child(2) {
-    transform: rotate(45deg);
-  }
-  & g line:nth-child(3) {
-    transform: rotate(-45deg);
-  }
-}
+//   & g circle {
+//     stroke-dashoffset: 0;
+//   }
+//   & g line:nth-child(1),
+//   & g line:nth-child(4) {
+//     opacity: 0;
+//   }
+//   & g line:nth-child(2) {
+//     transform: rotate(45deg);
+//   }
+//   & g line:nth-child(3) {
+//     transform: rotate(-45deg);
+//   }
+// }
