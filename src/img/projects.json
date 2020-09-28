@@ -14,66 +14,66 @@
         "mainBanner": "Bannerdesktop-1920.png",
         "bannerMobile": "mobile/bannnermobile-480.jpg"
     },
-    "projectsId": {
-        "01":
+    "projectsId": [
         {
+            "id": "1",
             "name": "Yum",
             "Title": "Project: YumBox App Mobile",
             "Detail": "UX/UI Design - Brand Design - Graphic Design"
         },
-        "02":
         {
+            "id": "2",
             "name": "STB",
             "Title": "Project: Lookbook Redesign",
             "Detail": "UI Design"
         },
-        "03":
         {
+            "id": "3",
             "name": "SDO",
             "Title": "Project: Season Redesign",
             "Detail": "UX/UI Design - Brand Design - Graphic Design"
         },
-        "04":
         {
+            "id": "4",
             "name": "Colores",
             "Title": "Project: Editorial Libro de los Colores",
             "Detail": "Editorial Design - Graphic Design"
         },
-        "05":
         {
+            "id": "5",
             "name": "HCB",
             "Title": "Project: Newsletter Sketch",
             "Detail": "UI Design"
         },
-        "06":
         {
+            "id": "6",
             "name": "Calza",
             "Title": "Project: Web Design",
             "Detail": "UX/UI Design - Content Creation"
         },
-        "07":
         {
+            "id": "7",
             "name": "Malteadas",
             "Title": "Project: Brand Identity",
             "Detail": "Content Creation - UX/UI Design - Art Director"
         },
-        "08":
         {
+            "id": "8",
             "name": "Bonf",
             "Title": "Project: Corporate Manual",
             "Detail": "Editorial Design - Graphic Design"
         },
-        "09":
         {
+            "id": "9",
             "name": "CHH",
             "Title": "Project: Logo Design",
             "Detail": "Personal brand - Graphic Design"
         },
-        "10":
         {
+            "id": "10",
             "name": "Yumlato",
             "Title": "Project: Brand Identity",
             "Detail": "Graphic proposal - Graphic Design"
         }    
-    }
+    ]
 }

@@ -1,18 +1,20 @@
 import React from 'react';
 import SliderItems from "./slider-items";
-import Datos from "../../img/proyectos";
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import "../../scss/swiper-bundle.css";
+import "./dropdown.scss";
+import Datos from "../../img/projects.json";
 
 const Slider = () => {
-    // const PrjItems = Object.key(Data.projectsId)
-    // const ItemAmnt = Datos.projectsId
+    const Items = Datos.projectsId
     return (
         <div className="dropdown_menu dropdown_menu--animated dropdown_menu-6">
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
-                    {Datos.map((data, key) => {
+                    {Items.map((data, key) => {
                     return (
                         <SliderItems
-                            key={key}
+                            key={data.id}
                             name={data.name}
                             id={data.id}
                             title={data.Title}

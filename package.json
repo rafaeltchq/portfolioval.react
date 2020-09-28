@@ -21,6 +21,7 @@
     "react-use-measure": "^2.0.1",
     "sass-loader": "^10.0.2",
     "styled-components": "^5.2.0",
+    "swiper": "^6.3.1",
     "wouter": "^2.5.1"
   },
   "scripts": {

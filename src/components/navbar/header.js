@@ -4,16 +4,9 @@ import NavMenu from "./navmenu";
 import ToggleBtn from "./toggleButton";
 import "./header.scss";
 import MenuItems from "./menu-items";
-import Slider from "../slider/slider";
+// import Slider from "../slider/slider";
 
 export default function Header() {
-  // const MenuItemsDsktop = () => {
-  //   if (window.innerWidth > 480) {
-  //     return <MenuItems />
-  //   } else {
-  //     return <></>
-  //   }
-  // }
 
   const [open, NewSte] = useState(false);
   const Toggle = () => NewSte(!open);
@@ -26,7 +19,7 @@ export default function Header() {
         <ToggleBtn trigger={Toggle}
           trigged={open}
         />
-        <Slider />
+        {/* <Slider /> */}
       </nav>
     );
   };

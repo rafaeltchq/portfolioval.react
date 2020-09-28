@@ -1,7 +1,7 @@
 // Logo
 $logo: url(../../img/Logotipo/logo.png);
 // Main-banner
-$banner: url(../../img/Bannerdesktop-1920.png);
+$banner: url(../../img/Bannerdesktop1920.png);
 $banner-mobile: url(../../img/mobile/bannnermobile-480.jpg);
 
 // About me picture
@@ -9,53 +9,53 @@ $valen-pic: url(../../img/foto-avatar-588.png);
 $my-works: url(../../img/myworks-19.png);
 $works-mobile: url(../../img/mobile/Myworkmobile-20.png);
 
-// Cover & Carousel Swipe Slide pictures:
-$cover-1: url(../../img/Yum/yum-portada-960.jpg);
-$cover-2: url(../../img/STB/STB-Portada-960.jpg); //STB
-$cover-3: url(../../img/SDO/sdo-portada-960.jpg); //SDO
-$cover-4: url(../../img/Colores/colores-portada-960.jpg);
-$cover-5: url(../../img/HCB/HCB-Portada-960.jpg); //HCB
-$cover-6: url(../../img/Calza/calza-portada-960.jpg);
-$cover-7: url(../../img/Malteadas/malteadas-portada-960.jpg);
-$cover-8: url(../../img/Bonf/bonf-portada-960.jpg);
-$cover-9: url(../../img/CHH/chhportadas-960.jpg);
-$cover-10: url(../../img/Yumlato/yumlaportadas-960.jpg);
+// Cover:
+$cover-1: url(../../img/Yum/yumCover960.jpg);
+$cover-2: url(../../img/STB/STBCover960.jpg); //STB
+$cover-3: url(../../img/SDO/sdoCover960.jpg); //SDO
+$cover-4: url(../../img/Colores/coloresCover960.jpg);
+$cover-5: url(../../img/HCB/HCBCover960.jpg); //HCB
+$cover-6: url(../../img/Calza/calzaCover960.jpg);
+$cover-7: url(../../img/Malteadas/malteadasCover960.jpg);
+$cover-8: url(../../img/Bonf/bonfCover960.jpg);
+$cover-9: url(../../img/CHH/CHHCover960.jpg);
+$cover-10: url(../../img/Yumlato/yumlatoCover960.jpg);
 
-// Cover mobile pictures:
-$coverMbl-1: url(../../img/Yum/yum-portada-480.jpg);
-$coverMbl-2: url(../../img/STB/STB-Portada-480.jpg); //STB
-$coverMbl-3: url(../../img/SDO/sdo-portada-480.jpg); //SDO
-$coverMbl-4: url(../../img/Colores/colores-portada-480.jpg);
-$coverMbl-5: url(../../img/HCB/HCB-Portada-480.jpg); //HCB
-$coverMbl-6: url(../../img/Calza/calza-portada-480.jpg);
-$coverMbl-7: url(../../img/Malteadas/malteadas-portada-480.jpg);
-$coverMbl-8: url(../../img/Bonf/bonf-portada-480.jpg);
-$coverMbl-9: url(../../img/CHH/chhportadas-480.jpg);
-$coverMbl-10: url(../../img/Yumlato/yumlaportadas-480.jpg);
+// Cover mobile pictures & Carousel Swipe Slide pictures:
+$coverMbl-1: url(../img/Yum/yumCover480.jpg);
+$coverMbl-2: url(../img/STB/STBCover480.jpg); //STB
+$coverMbl-3: url(../img/SDO/SDOCover480.jpg); //SDO
+$coverMbl-4: url(../img/Colores/ColoresCover480.jpg);
+$coverMbl-5: url(../img/HCB/HCBCover480.jpg); //HCB
+$coverMbl-6: url(../img/Calza/CalzaCover480.jpg);
+$coverMbl-7: url(../img/Malteadas/MalteadasCover480.jpg);
+$coverMbl-8: url(../img/Bonf/BonfCover480.jpg);
+$coverMbl-9: url(../img/CHH/CHHCover480.jpg);
+$coverMbl-10: url(../img/Yumlato/yumlatoCover480.jpg);
 
 // Projects images desktop
-$project-1: url(../../img/Yum/yum-1920.jpg);
-$project-2: url(../../img/STB/STB-1920.jpg);
-$project-3: url(../../img/SDO/SDO-1920.jpg);
-$project-4: url(../../img/Colores/Colores-1920.jpg);
-$project-5: url(../../img/HCB/HCB-1920.jpg);
-$project-6: url(../../img/Calza/Calza-1920.jpg);
-$project-7: url(../../img/Malteadas/Malteadas-1920.jpg);
-$project-8: url(../../img/Bonf/Bonf-1920.jpg);
-$project-9: url(../../img/CHH/chhinternas-1920.jpg);
-$project-10: url(../../img/Yumlato/yumlato-1920.jpg);
+$project-1: url(../../img/Yum/yum1920.jpg);
+$project-2: url(../../img/STB/STB1920.jpg);
+$project-3: url(../../img/SDO/SDO1920.jpg);
+$project-4: url(../../img/Colores/Colores1920.jpg);
+$project-5: url(../../img/HCB/HCB1920.jpg);
+$project-6: url(../../img/Calza/Calza1920.jpg);
+$project-7: url(../../img/Malteadas/Malteadas1920.jpg);
+$project-8: url(../../img/Bonf/Bonf1920.jpg);
+$project-9: url(../../img/CHH/CHH1920.jpg);
+$project-10: url(../../img/Yumlato/yumlato1920.jpg);
 
 // Projects images mobile
-$projectMb-1: url(../../img/Yum/yum-1024.jpg);
-$projectMb-2: url(../../img/STB/STB-1024.jpg);
-$projectMb-3: url(../../img/SDO/SDO-1024.jpg);
-$projectMb-4: url(../../img/Colores/Colores-1024.jpg);
-$projectMb-5: url(../../img/HCB/HCB-1024.jpg);
-$projectMb-6: url(../../img/Calza/Calza-1024.jpg);
-$projectMb-7: url(../../img/Malteadas/Malteadas-1024.jpg);
-$projectMb-8: url(../../img/Bonf/Bonf-1024.jpg);
-$projectMb-9: url(../../img/CHH/chhinternas-1024.jpg);
-$projectMb-10: url(../../img/Yumlato/yumlato-1024.jpg);
+$projectMb-1: url(../../img/Yum/yum1024.jpg);
+$projectMb-2: url(../../img/STB/STB1024.jpg);
+$projectMb-3: url(../../img/SDO/SDO1024.jpg);
+$projectMb-4: url(../../img/Colores/Colores1024.jpg);
+$projectMb-5: url(../../img/HCB/HCB1024.jpg);
+$projectMb-6: url(../../img/Calza/Calza1024.jpg);
+$projectMb-7: url(../../img/Malteadas/Malteadas1024.jpg);
+$projectMb-8: url(../../img/Bonf/Bonf1024.jpg);
+$projectMb-9: url(../../img/CHH/CHH1024.jpg);
+$projectMb-10: url(../../img/Yumlato/yumlato1024.jpg);
 
 // Amount of projects
 $projects: (

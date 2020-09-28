@@ -1,4 +1,5 @@
 import React from 'react';
+import "./dropdown.scss"
 import { Link } from "wouter";
 const SliderItems = (props) => {
     return (
