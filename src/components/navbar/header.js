@@ -4,10 +4,10 @@ import NavMenu from "./navmenu";
 import ToggleBtn from "./toggleButton";
 import "./header.scss";
 import MenuItems from "./menu-items";
-// import Slider from "../slider/slider";
+import Carousel from "../slider/slider";
 
 export default function Header() {
-
+  const [ workOpen, setWorkOpen ] = useState(false)
   const [open, NewSte] = useState(false);
   const Toggle = () => NewSte(!open);
 
@@ -15,7 +15,8 @@ export default function Header() {
     return (
       <nav className="nav dropdown" role="navigation">
         <Link to="/"><img id="logo" alt="Logo" /></Link>
-        <MenuItems className={"nav__menu"} />
+        <MenuItems className={"nav__menu"}
+        workOpen={setWorkOpen(!workOpen)} />
         <ToggleBtn trigger={Toggle}
           trigged={open}
         />
@@ -27,6 +28,9 @@ export default function Header() {
     <header className="scrolled">
       <NavBar />
       <NavMenu active={open} />
+      <Carousel 
+        workOpen={workOpen}
+      />
     </header>
   );
 }

@@ -3,6 +3,7 @@ import "./header.scss";
 import { Link } from "wouter";
 
 const MenuItems = (props) => {
+  
     return (
        <ul className={props.className}>
         <li className="nav__item land">
@@ -11,8 +12,8 @@ const MenuItems = (props) => {
         <li
           className="nav__item dropdown-6"
           aria-expanded="false"
-          aria-controls="menu">WORK
-          <div className="triangle-up"></div>
+          aria-controls="menu"><Link to="#" onClick={props.workOpen} className="nav__link">WORK</Link>
+          {/* <div className="triangle-up"></div> */}
         </li>
         <li className="nav__item">
           <Link to="#contact" className="nav__link">CONTACT</Link>
