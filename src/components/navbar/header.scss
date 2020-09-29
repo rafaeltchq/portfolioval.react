@@ -16,6 +16,7 @@ header {
         margin: 0 auto;
         max-width: $vw-width;
         margin-top: 2.3rem;
+        z-index: 100;
         @include transition-fade;
         #logo {
             content: $logo;
@@ -32,11 +33,11 @@ header {
         &__menu:focus {
             outline: none;
         }
-        .land {
-            color: white;
-            border-bottom: 1px solid white;
-            cursor: context-menu;
-        }
+        // .land {
+        //     color: white;
+        //     border-bottom: 1px solid white;
+        //     cursor: context-menu;
+        // }
 
         &__item {
             display: inline-block;
@@ -54,6 +55,19 @@ header {
             text-decoration: none;
             color: white;
             @include transition-fade;
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 1px;
+                margin-top: 2px;
+                border-radius: 2px;
+                background: white;
+                transition: width 200ms ease-in-out;
+            }
+            &:hover::after {
+                width: 100%;
+            }
             &:hover,
             &:focus {
                 outline: 0;
@@ -64,12 +78,19 @@ header {
     }
 }
 .scrolled {
-    background: rgba(0, 0, 0, 0.6);
+    background: $bg-header;
     @include transition-fade;
     nav {
         margin-top: 0;
         @include transition-fade;
     }
+}
+.topScroll::before {
+    content: "";
+    display: block;
+    height: auto;
+    background: $bg-header;
+    @include transition-fade;
 }
 @include respond-to(mobile) {
     header {

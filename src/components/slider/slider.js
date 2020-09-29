@@ -3,7 +3,6 @@ import SliderItems from "./slider-items";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { useSpring, animated } from 'react-spring';
-// import useMeasure from '../../usemeasure';
 import 'swiper/swiper.scss';
 import Datos from "../../img/projects.json";
 import 'swiper/components/navigation/navigation.scss';
@@ -14,8 +13,14 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Carousel = (props) => {
     const Items = Datos.projectsId
-    // const [bind, { height }] = useMeasure()
-    const Falling = useSpring({ height: props.workOpen ? "auto" : 0 })
+    const Falling = useSpring({ transform: props.workOpen ? "rotateX(0deg)" : "rotateX(-90deg)",
+    transformOrigin: "top",
+    opacity: props.workOpen ? 1 : 0})
+        
+    // useEffect(() => {
+    //     console.log("render");
+    //     console.log("workOpen", props.workOpen);
+    // })
     return (
         <animated.div className="dropdown_menu" style={Falling}>
             <Swiper

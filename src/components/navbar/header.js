@@ -1,36 +1,54 @@
-import React, { useState } from "react";
-import { Link } from "wouter";
+import React, { useState, useEffect} from "react";
 import NavMenu from "./navmenu";
-import ToggleBtn from "./toggleButton";
+import NavBar from "./navbar";
 import "./header.scss";
-import MenuItems from "./menu-items";
 import Carousel from "../slider/slider";
+import { useSpring, animated } from "react-spring";
 
 export default function Header() {
-  const [ workOpen, setWorkOpen ] = useState(false)
-  const [open, NewSte] = useState(false);
-  const Toggle = () => NewSte(!open);
-
-  const NavBar = () => {
-    return (
-      <nav className="nav dropdown" role="navigation">
-        <Link to="/"><img id="logo" alt="Logo" /></Link>
-        <MenuItems className={"nav__menu"}
-        workOpen={setWorkOpen(!workOpen)} />
-        <ToggleBtn trigger={Toggle}
-          trigged={open}
-        />
-        {/* <Slider /> */}
-      </nav>
-    );
+  const [scrollPosition, setSrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setSrollPosition(position);
   };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const [ carouselOpen, setCarouselOpen ] = useState(false);
+  const [mobileMenuOpen, NewMenuState] = useState(false);
+  useEffect(() => {
+  console.log(scrollPosition);  
+  })
+  const TopShadow = useSpring({
+    backgroundImage: "linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 50%)",
+    backgroundSize: "200% 200%",
+    backgroundPosition: !carouselOpen ? "0% 0%" : "100% 100%"
+  })
+  
+  useEffect(() => {
+    const keyHandler = ({ keyCode }) => {
+      if (keyCode !== 27) return;
+      setCarouselOpen(false);
+    };
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
+  });
+
   return (
-    <header className="scrolled">
-      <NavBar />
-      <NavMenu active={open} />
-      <Carousel 
-        workOpen={workOpen}
+    <animated.header className={ scrollPosition > 0 ? "scrolled" : ""} style={TopShadow}>
+      <NavBar
+        trigger={() => NewMenuState(!mobileMenuOpen)}
+        trigged={mobileMenuOpen}
+        workOpen={() => window.innerWidth > 480 ? setCarouselOpen(!carouselOpen) : false}
       />
-    </header>
+      <NavMenu active={mobileMenuOpen} />
+      <Carousel 
+        workOpen={carouselOpen}
+      />
+    </animated.header>
   );
 }

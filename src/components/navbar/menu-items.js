@@ -4,16 +4,16 @@ import { Link } from "wouter";
 
 const MenuItems = (props) => {
   
+    
     return (
        <ul className={props.className}>
-        <li className="nav__item land">
+        <li className="nav__item">
           <Link to="#" className="nav__link">HOME</Link>
         </li>
         <li
-          className="nav__item dropdown-6"
+          className="nav__item"
           aria-expanded="false"
-          aria-controls="menu"><Link to="#" onClick={props.workOpen} className="nav__link">WORK</Link>
-          {/* <div className="triangle-up"></div> */}
+          aria-controls="menu"><Link to="/" onClick={props.workOpen} className="nav__link">WORK</Link>
         </li>
         <li className="nav__item">
           <Link to="#contact" className="nav__link">CONTACT</Link>

@@ -1,0 +1,43 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+main {
+    max-width: $vw-width;
+    margin: 0 auto;
+  }
+  
+  .main-banner {
+    position: relative;
+    overflow: hidden;
+    #mainBanner:not([src]) {
+      display: block;
+      content: $banner;
+      max-width: 100%;
+    }
+    h2 {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 60%;
+      left: 50%;
+      width: 80%;
+      text-align: center;
+      font-size: calc(1.5vw + 2.2em);
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      color: whitesmoke;
+      margin: 0;
+      @include respond-to(md-screens) {
+        font-size: 3.6vw;
+      }
+    }
+  }
+  @include respond-to(mobile) {
+    .main-banner {
+        #mainBanner:not([src]) {
+            content: $banner-mobile;
+        }
+        h2 {
+            display: none;
+        }
+    }
+  }
