@@ -2,9 +2,10 @@
 @import "../../scss/mixins";
 
 header {
+    
     position: fixed;
     z-index: 1000;
-    min-width: 100%;
+    width: 100%;
     margin: 0;
     @include transition-fade;
 
@@ -50,11 +51,6 @@ header {
             &.menu_mobile {
                 display: none;
             }
-        }
-        &__link {
-            text-decoration: none;
-            color: white;
-            @include transition-fade;
             &::after {
                 content: '';
                 display: block;
@@ -65,11 +61,17 @@ header {
                 background: white;
                 transition: width 200ms ease-in-out;
             }
+            &.land::after,
             &:hover::after {
                 width: 100%;
             }
-            &:hover,
-            &:focus {
+        }
+        &__link {
+            text-decoration: none;
+            color: white;
+            @include transition-fade;
+            
+            &:hover {
                 outline: 0;
                 color: silver;
                 @include transition-fade;
@@ -78,19 +80,12 @@ header {
     }
 }
 .scrolled {
-    background: $bg-header;
-    @include transition-fade;
+    // background: $bg-header;
+    // @include transition-fade;
     nav {
         margin-top: 0;
         @include transition-fade;
     }
-}
-.topScroll::before {
-    content: "";
-    display: block;
-    height: auto;
-    background: $bg-header;
-    @include transition-fade;
 }
 @include respond-to(mobile) {
     header {
@@ -100,8 +95,8 @@ header {
             #logo {
                 margin: 0.3rem 0 0.3rem 5vw;
             }
-            .land {
-                border-bottom: none;
+            .land::after {
+                width: 0%;
             }
             &__menu {
                 display: none;

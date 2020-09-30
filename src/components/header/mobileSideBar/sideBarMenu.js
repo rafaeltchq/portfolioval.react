@@ -1,7 +1,7 @@
 import React from "react";
-import MenuItems from "./menu-items";
+import MenuItems from "../navbar/menu-items";
 import { useTransition, animated } from "react-spring";
-import "./header.scss";
+import "../header.scss";
 // import { Transition } from "react-spring/renderprops";
 
 const NavMenu = (props) => {
