@@ -8,8 +8,8 @@ const NavBar = (props) => {
         <nav className="nav dropdown" role="navigation">
         <Link to="/"><img id="logo" alt="Logo" /></Link>
         <MenuItems className={"nav__menu"}
-        workOpen={props.workOpen}
-        workClose={props.workClose} />
+        workOpener={props.workOpener}
+        workCloser={props.workCloser} />
         <ToggleBtn trigger={props.trigger}
           trigged={props.trigged}
         />

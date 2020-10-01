@@ -13,7 +13,9 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Carousel = (props) => {
     const Items = Datos.projectsId
-    const Falling = useSpring({ height: props.workOpen ? "212px" : "0px"})
+    const Falling = useSpring({ height: props.carouselOpen ? "212px" : "0px"})
+
+
 
     return (
         <animated.div className="dropdown_menu" style={Falling}>

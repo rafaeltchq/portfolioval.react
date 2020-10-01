@@ -1,0 +1,36 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+.banner-1 {
+    position: relative;
+    background-color: white;
+    max-width: 100%;
+    height: 230px;
+    overflow: hidden;
+    &-works:not([src]) {
+      content: $my-works;
+      position: absolute;
+      width: 85%;
+      top: 0%;
+      left: 200%;
+      z-index: 20;
+      opacity: 0;
+    }
+    .left-roll {
+      opacity: 1;
+      left: 5%;
+    //   @include slide-in-right;
+    }
+  }
+  @include respond-to(mobile) {
+    .banner-1 {
+      height: 180px;
+      &-works:not([src]) {
+          content: $works-mobile;
+          max-width: 90%;
+      }
+      .left-roll {
+          left: 2rem;
+      }
+  }
+  }

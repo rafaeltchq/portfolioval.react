@@ -1,0 +1,75 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+.intro-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  max-width: $vw-width;
+  img,
+  .bio-text {
+    margin: auto 2rem;
+    max-width: 400px;
+    height: auto;
+  }
+  #valenPic:not([src]) {
+    content: $valen-pic;
+  }
+  .bio-text {
+    position: relative;
+    font-size: 0.9rem;
+    overflow-y: visible;
+    div {
+      margin: 0;
+      #bio-es,
+      #bio-en {
+        margin: 0;
+        text-align: justify;
+      }
+      .showed {
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    #translate {
+      position: absolute;
+      bottom: -19%;
+      right: 0%;
+      z-index: 50;
+      font-size: 0.7rem;
+      text-decoration: none;
+      font-style: italic;
+      cursor: pointer;
+    }
+  }
+}
+@include respond-to(mobile) {
+  .intro-text {
+    flex-direction: column;
+    padding: 1rem 2.6rem;
+    margin: 0.5rem 0;
+    img,
+    .bio-text {
+      max-width: 100%;
+      margin: 0;
+    }
+    .bio-text {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      div {
+        #bio-es,
+        #bio-en {
+          text-align: left;
+          line-height: 1.7rem;
+        }
+      }
+      #translate {
+        font-size: 1rem;
+        bottom: -12%;
+      }
+    }
+  }
+}

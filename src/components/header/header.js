@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import NavMenu from "./mobileSideBar/sideBarMenu";
 import NavBar from "./navbar/navbar";
 import "./header.scss";
@@ -18,29 +18,25 @@ export default function Header() {
       setCarouselOpen(false)
     }, 700);
   }
+  const keyHandler = ({ keyCode }) => {
+    if (keyCode !== 27) return;
+    setCarouselOpen(false);
+  };
+  const handleClickOutside = e => {
+    e.preventDefault()
+    setCarouselOpen(false)
+  };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('scroll', closeWhenScroll, { passive: true })
-    return () => {
-        window.removeEventListener('scroll', handleScroll)
-        window.removeEventListener('scroll', closeWhenScroll)
-    }
-  }, [])
-
-  
-  // useEffect(() => {
-  // console.log(carouselOpen);  
-  // })
-  
-  
-  useEffect(() => {
-    const keyHandler = ({ keyCode }) => {
-      if (keyCode !== 27) return;
-      setCarouselOpen(false);
-    };
     document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
-  });
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+    window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('scroll', closeWhenScroll)
+    document.removeEventListener("keydown", keyHandler);
+    document.removeEventListener("mousedown", handleClickOutside)}
+  },[]);
 
   
   const BgHeader = useSpring({ 
@@ -52,12 +48,12 @@ export default function Header() {
       <NavBar
         trigger={() => NewMenuState(!mobileMenuOpen)}
         trigged={mobileMenuOpen}
-        workOpen={() => window.innerWidth > 480 ? setCarouselOpen(!carouselOpen) : false}
-        workClose={() => setCarouselOpen(false)}
+        workOpener={() => window.innerWidth > 480 ? setCarouselOpen(!carouselOpen) : false}
+        workCloser={() => setCarouselOpen(false)}
       />
       <NavMenu active={mobileMenuOpen} />
       <Carousel 
-        workOpen={carouselOpen}
+        carouselOpen={carouselOpen}
       />
     </animated.header>
   );

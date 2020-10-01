@@ -1,0 +1,98 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    font-size: 16px;
+    div:first-child {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      white-space: nowrap;
+      max-width: $vw-width;
+      position: relative;
+      hr {
+        display: none;
+      }
+      p {
+        margin: 1.5vw;
+        text-transform: uppercase;
+        font-size: 0.6em;
+        letter-spacing: 0.2rem;
+      }
+      .socials {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-flow: row wrap;
+        & > * {
+          flex: 1 100%;
+        }
+        p {
+          color: $fontColour;
+          font-size: calc(0.5rem + 0.5vw);
+          text-align: center;
+          margin: 0.6rem 0;
+          font-weight: 600;
+          letter-spacing: normal;
+        }
+        &__link {
+          flex: 1 auto;
+          text-align: center;
+          color: $fontColour;
+          text-decoration: none;
+          font-size: 1.6em;
+          margin: 0;
+          &:hover,
+          &:focus {
+            cursor: pointer;
+            outline: 0;
+            color: silver;
+            @include transition-fade;
+          }
+        }
+      }
+    }
+  }
+  @include respond-to(mb_tablet) {
+    footer {
+        padding: 0;
+        div:first-child {
+            flex-direction: column;
+            text-align: center;
+            white-space: normal;
+            hr {
+                display: block;
+                order: 0;
+                height: 1px;
+                border-width: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                margin: 0.5rem 0;
+            }
+            p {
+                font-size: 0.5rem;
+                margin: 0.1rem 0;
+            }
+            p:last-child {
+                order: 3;
+                margin-bottom: 0.5rem;
+            }
+            .socials {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                width: 85%;
+                margin: 0 auto;
+                order: -1;
+                P {
+                    font-size: 1rem;
+                    order: 0;
+                }
+            }
+        }
+    }
+  }
