@@ -9,27 +9,28 @@ const MenuItems = ({ workOpener, workCloser, ...props }) => {
        <ul className={props.className}>
         <li className={itemSel === 0 ? "nav__item land" : "nav__item"}
           onClick={() => {setNewItem(0); workCloser()}}>
-          <Link to="#"
+          <Link to="/"
           className="nav__link">HOME</Link>
         </li>
         <li
           className={itemSel === 1 ? "nav__item land" : "nav__item"}
           onClick={() => setNewItem(1)}
           aria-expanded="false"
-          aria-controls="menu"><Link to="/"
+          aria-controls="menu">
+          <button
           className="nav__link"
           onClick={workOpener}
-          >WORK</Link>
+          >WORK</button>
         </li>
         <li
         className={itemSel === 2 ? "nav__item land" : "nav__item"}
           onClick={() => {setNewItem(2); workCloser()}}>
-          <Link to="#contact" className="nav__link">CONTACT</Link>
+          <Link to="/#contact" className="nav__link">CONTACT</Link>
         </li>
         <li
         className={itemSel === 3 ? "nav__item land" : "nav__item"}
           onClick={() => {setNewItem(3); workCloser()}}>
-          <Link to="#about" className="nav__link">ABOUT</Link>
+          <Link to="/#about" className="nav__link">ABOUT</Link>
         </li>
       </ul>     
     );   

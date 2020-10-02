@@ -1,0 +1,29 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+.project {
+    display: block;
+    position: relative;
+    max-width: 1440px;
+    max-height: 100%;
+    padding-top: 4rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+    }
+    @each $index, $cover, $mobile, $name in $projects {
+      &-#{$index}:not([src]) {
+        @include project($name);
+      }
+    }
+  }
+  @include respond-to(mb_tablet) {
+    .project {
+        @each $index, $cover, $mobile, $proj, $name in $projects {
+            &-#{$index}:not([src]) {
+                @include project($name);
+            }
+        }
+    }
+}

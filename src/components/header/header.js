@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useSpring, animated } from 'react-spring';
 import NavMenu from "./mobileSideBar/sideBarMenu";
 import NavBar from "./navbar/navbar";
-import "./header.scss";
 import Carousel from "./slider/slider";
-import { useSpring, animated } from 'react-spring';
+import "./header.scss";
 
 export default function Header() {
   const [ carouselOpen, setCarouselOpen ] = useState(false);
@@ -22,21 +22,22 @@ export default function Header() {
     if (keyCode !== 27) return;
     setCarouselOpen(false);
   };
-  const handleClickOutside = e => {
-    e.preventDefault()
-    setCarouselOpen(false)
-  };
+  // const handleClickOutside = e => {
+  //   e.preventDefault()
+  //   setCarouselOpen(false)
+  // };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('scroll', closeWhenScroll, { passive: true })
     document.addEventListener("keydown", keyHandler);
-    document.addEventListener("mousedown", handleClickOutside);
+    // document.addEventListener("mousedown", handleClickOutside);
     return () => {
     window.removeEventListener('scroll', handleScroll)
     window.removeEventListener('scroll', closeWhenScroll)
     document.removeEventListener("keydown", keyHandler);
-    document.removeEventListener("mousedown", handleClickOutside)}
-  },[]);
+    // document.removeEventListener("mousedown", handleClickOutside)
+  }
+  },[carouselOpen]);
 
   
   const BgHeader = useSpring({ 

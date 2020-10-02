@@ -34,11 +34,6 @@ header {
         &__menu:focus {
             outline: none;
         }
-        // .land {
-        //     color: white;
-        //     border-bottom: 1px solid white;
-        //     cursor: context-menu;
-        // }
 
         &__item {
             display: inline-block;
@@ -65,12 +60,18 @@ header {
             &:hover::after {
                 width: 100%;
             }
+            & button {
+                appearance: none;
+                cursor: pointer;
+                outline: none;
+                background-color: transparent;
+                border-style: hidden;
+            }
         }
         &__link {
             text-decoration: none;
             color: white;
             @include transition-fade;
-            
             &:hover {
                 outline: 0;
                 color: silver;

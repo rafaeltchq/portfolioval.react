@@ -3,50 +3,15 @@
 
 .dropdown {
     position: relative;
-    // &-6 {
-    //     position: relative;
-    //     .triangle-up {
-    //         position: absolute;
-    //         top: -1000%;
-    //         opacity: 0;
-    //         right: 13%;
-    //         width: 0;
-    //         height: 0;
-    //         transition-delay: 500ms;
-    //         border-left: 15px solid transparent;
-    //         border-right: 15px solid transparent;
-    //         border-bottom: 10px solid;
-    //         border-bottom-color: $bg-dropdown-color;
-    //         &.show {
-    //             top: 2.5rem;
-    //             @include dropdown-fade;
-    //         }
-    //     }
-    // }
     &_menu {
-        // display: block;
-        // position: absolute;
-        // top: 50%;
         margin: 0 auto;
         left: 0%;
         width: 100%;
         max-width: $vw-width;
-        // max-height: auto;
-        // transition-delay: 500ms;
         padding: 0;
-        // perspective: 1000px;
         overflow: hidden;
-        // background-color: $bg-dropdown-color;
-        // &.show,
-        // &:hover {
-        //     top: 90%;
-        //     @include dropdown-fade;
-        // }
         .swiper-container {
-            // width: 100%;
-            // max-height: 250px;
             padding-bottom: 1.2rem;
-            // background-color: $bg-header;
         }
         .swiper-pagination {
             margin-bottom: 0.8rem;
@@ -55,10 +20,6 @@
             text-align: center;
             font-size: 18px;
             background-color: transparent;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
             a {
                 text-decoration: none;
                 img {
@@ -83,5 +44,12 @@
 @include respond-to(mobile) {
     .dropdown_menu {
         display: none;
+    }
+}
+@include respond-to(mb_tablet) {
+    @each $index, $cover, $mobile in $projects {
+        .cover-post-#{$index}:not([src]) {
+            @include portada($mobile);
+        }
     }
 }
