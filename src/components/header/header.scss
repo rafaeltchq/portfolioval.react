@@ -2,7 +2,6 @@
 @import "../../scss/mixins";
 
 header {
-    
     position: fixed;
     z-index: 1000;
     width: 100%;
@@ -14,17 +13,21 @@ header {
         display: flex;
         flex-wrap: wrap;
         text-align: center;
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
         max-width: $vw-width;
         margin-top: 2.3rem;
         z-index: 100;
         @include transition-fade;
+        &.scrolled {
+            margin-top: 0;
+            @include transition-fade;
+        }
         #logo {
             content: $logo;
             max-height: 4rem;
             margin: 0.7rem 0 0.7rem 5vw;
         }
-
         &__menu {
             margin: 0 8vw 0 auto;
             padding: 0;
@@ -34,7 +37,6 @@ header {
         &__menu:focus {
             outline: none;
         }
-
         &__item {
             display: inline-block;
             list-style: none;
@@ -47,7 +49,7 @@ header {
                 display: none;
             }
             &::after {
-                content: '';
+                content: "";
                 display: block;
                 width: 0;
                 height: 1px;
@@ -80,14 +82,7 @@ header {
         }
     }
 }
-.scrolled {
-    // background: $bg-header;
-    // @include transition-fade;
-    nav {
-        margin-top: 0;
-        @include transition-fade;
-    }
-}
+
 @include respond-to(mobile) {
     header {
         .nav {

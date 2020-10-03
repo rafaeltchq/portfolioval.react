@@ -3,16 +3,18 @@ import { useSpring, animated } from 'react-spring';
 import NavMenu from "./mobileSideBar/sideBarMenu";
 import NavBar from "./navbar/navbar";
 import Carousel from "./slider/slider";
+import useScrollPosition from "../scrollposition";
 import "./header.scss";
 
 export default function Header() {
   const [ carouselOpen, setCarouselOpen ] = useState(false);
   const [mobileMenuOpen, NewMenuState] = useState(false);
-  const [scrollPosition, setSrollPosition] = useState(0)
-  const handleScroll = () => {
-    const position = window.pageYOffset
-    setSrollPosition(position)
-  }
+  const scrollPosition = useScrollPosition(0);
+  // const [scrollPosition, setSrollPosition] = useState(0)
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset
+  //   setSrollPosition(position)
+  // }
   const closeWhenScroll = () => {
     setTimeout(() => {
       setCarouselOpen(false)
@@ -26,26 +28,26 @@ export default function Header() {
   //   e.preventDefault()
   //   setCarouselOpen(false)
   // };
+  
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    // window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('scroll', closeWhenScroll, { passive: true })
     document.addEventListener("keydown", keyHandler);
     // document.addEventListener("mousedown", handleClickOutside);
     return () => {
-    window.removeEventListener('scroll', handleScroll)
+    // window.removeEventListener('scroll', handleScroll)
     window.removeEventListener('scroll', closeWhenScroll)
     document.removeEventListener("keydown", keyHandler);
     // document.removeEventListener("mousedown", handleClickOutside)
   }
-  },[carouselOpen]);
-
-  
+  },[carouselOpen])
   const BgHeader = useSpring({ 
     background: (scrollPosition <= 0) && !carouselOpen ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.6)",
     config: { duration: 100 }
   })
   return (
-    <animated.header className={ scrollPosition > 0 ? "scrolled" : ""} style={BgHeader}>
+    <animated.header
+    style={BgHeader}>
       <NavBar
         trigger={() => NewMenuState(!mobileMenuOpen)}
         trigged={mobileMenuOpen}

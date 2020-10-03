@@ -7,7 +7,6 @@ import { Route, Router, Switch } from "wouter";
 
 
 function App() {
-  
   return (
     <>
       <Header />
