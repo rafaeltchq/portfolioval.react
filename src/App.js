@@ -3,15 +3,18 @@ import Header from "./components/header/header";
 import Home from "./components/pages/home";
 import Footer from "./components/footer/footer";
 import ProjectPage from "./components/pages/projects";
-import { Route, Router, Switch } from "wouter";
+import { Route, useRoute, Switch } from "wouter";
 
 
 function App() {
+  const isHome = useRoute("/")
   return (
     <>
-      <Header />
+      <Header
+        isHome={isHome[0]}
+      />
       <Switch>
-        <Route path="/" component={Home}></Route>
+        <Route path="/" component={Home} ></Route>
         <Route path="/:name" component={ProjectPage}></Route>
       </Switch>
       <Footer />

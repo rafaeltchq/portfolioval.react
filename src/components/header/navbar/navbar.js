@@ -12,7 +12,7 @@ const NavBar = (props) => {
   
     return (
         <nav
-        className={scrollPosition > 20 ? "nav dropdown scrolled" : "nav dropdown"}
+        className={scrollPosition > 10 ? "nav dropdown scrolled" : "nav dropdown"}
         role="navigation">
         <Link to="/"><img id="logo" alt="Logo" /></Link>
         <MenuItems className={"nav__menu"}
