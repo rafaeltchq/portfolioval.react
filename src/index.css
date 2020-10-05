@@ -1,4 +1,9 @@
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: "Roboto", sans-serif, "Segoe UI", "Helvetica Neue", Arial,
@@ -7,11 +12,14 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
+  text-align: left;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 code {
   font-family: "Roboto", sans-serif, "Segoe UI", "Helvetica Neue", Arial,
  "Noto Sans", BlinkMacSystemFont, "Apple Color Emoji";

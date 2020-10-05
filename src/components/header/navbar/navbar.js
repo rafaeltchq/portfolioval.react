@@ -2,24 +2,20 @@ import React from 'react';
 import { Link } from "wouter";
 import MenuItems from "./menu-items";
 import ToggleBtn from "../mobileSideBar/toggleButton";
-import useScrollPosition from "../../scrollposition";
+import useScrollPosition from "../../hooks/scrollposition";
 
-const NavBar = (props) => {
-  const scrollPosition = useScrollPosition(0)
-  // useEffect(() => {
-  //   console.log(scroll)
-  // })
-  
+const NavBar = ({ workOpener, workCloser, trigger, trigged, ...props }) => {
+  const scrollPosition = useScrollPosition();
     return (
         <nav
         className={scrollPosition > 10 ? "nav dropdown scrolled" : "nav dropdown"}
         role="navigation">
         <Link to="/"><img id="logo" alt="Logo" /></Link>
         <MenuItems className={"nav__menu"}
-        workOpener={props.workOpener}
-        workCloser={props.workCloser} />
-        <ToggleBtn trigger={props.trigger}
-          trigged={props.trigged}
+        workOpener={workOpener}
+        workCloser={workCloser} />
+        <ToggleBtn trigger={trigger}
+          trigged={trigged}
         />
       </nav>
     );

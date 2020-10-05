@@ -66,6 +66,7 @@ header {
                 appearance: none;
                 cursor: pointer;
                 outline: none;
+                padding: 0;
                 background-color: transparent;
                 border-style: hidden;
             }
@@ -109,18 +110,20 @@ header {
             &__item {
                 margin: 0.7rem 0;
                 font-size: 1.8rem;
+                & button {
+                    font-size: 1.8rem;
+                }
+                &::after {
+                    display: none;
+                }
                 &:hover,
                 &:focus {
                     background-color: rgba(0, 0, 0, 0.2);
                     @include transition-fade;
                 }
-                // &.dropdown-6,
                 .triangle-up {
                     display: none;
                 }
-                // &.menu_mobile {
-                //     display: block;
-                // }
             }
         }
         .sidebar {

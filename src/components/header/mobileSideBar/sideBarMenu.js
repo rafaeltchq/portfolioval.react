@@ -38,7 +38,9 @@ const NavMenu = (props) => {
         tabindex="-1"
         aria-label="main navigation"
       >
-      <MenuItems className={"nav__menu__sidebar"} />
+      <MenuItems className={"nav__menu__sidebar"}
+        sideBarCloser={props.sideBarCloser}
+      />
       </animated.div>
     )
   )

@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../header.scss";
 import { Link } from "wouter";
 
-const MenuItems = ({ workOpener, workCloser, ...props }) => {
+const MenuItems = ({ workOpener, workCloser, sideBarCloser, className, ...props }) => {
   const [ itemSel, setNewItem ] = useState(0)
+  const classSelector = i => itemSel === i ? "nav__item land" : "nav__item"
   
+  const clickCloser = i => {
+    // if ( window.innerWidth > 480 ) {
+      setNewItem(i);
+      workCloser();
+      console.log("clicked1");
+    // }
+    // else {
+      
+      // console.log("clicked2");
+      // () => sideBarCloser()
+    // }
+  }
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", clickCloser)
+  //   return () => 
+  //   document.removeEventListener("mousedown", clickCloser)
+  // },[])
     return (
-       <ul className={props.className}>
-        <li className={itemSel === 0 ? "nav__item land" : "nav__item"}
-          onClick={() => {setNewItem(0); workCloser()}}>
+       <ul
+       className={className}
+       >
+        <li className={classSelector(0)}
+          onClick={clickCloser(0)}>
           <Link to="/"
           className="nav__link">HOME</Link>
         </li>
         <li
-          className={itemSel === 1 ? "nav__item land" : "nav__item"}
+          className={classSelector(1)}
           onClick={() => setNewItem(1)}
           aria-expanded="false"
           aria-controls="menu">
@@ -23,14 +43,14 @@ const MenuItems = ({ workOpener, workCloser, ...props }) => {
           >WORK</button>
         </li>
         <li
-        className={itemSel === 2 ? "nav__item land" : "nav__item"}
-          onClick={() => {setNewItem(2); workCloser()}}>
+        className={classSelector(2)}
+          onClick={clickCloser(2)}>
           <Link to="/#contact" className="nav__link">CONTACT</Link>
         </li>
         <li
-        className={itemSel === 3 ? "nav__item land" : "nav__item"}
-          onClick={() => {setNewItem(3); workCloser()}}>
-          <Link to="/#about" className="nav__link">ABOUT</Link>
+        className={classSelector(3)}
+          onClick={clickCloser(3)}>
+          <Link to="/#bio" className="nav__link">ABOUT</Link>
         </li>
       </ul>     
     );   

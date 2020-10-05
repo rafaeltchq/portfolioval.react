@@ -6,7 +6,6 @@ const Home = ()  => {
     useEffect(() => {
         document.title = "Valentina Aquino"
     },[])
-    // console.log(match);
     return (
         <main>
             <MainBanner />

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSpring, animated } from 'react-spring';
 import NavMenu from "./mobileSideBar/sideBarMenu";
 import NavBar from "./navbar/navbar";
 import Carousel from "./slider/slider";
-import useScrollPosition from "../scrollposition";
+import useScrollPosition from "../hooks/scrollposition";
 import "./header.scss";
 
 export default function Header(props) {
   const [ carouselOpen, setCarouselOpen ] = useState(false);
-  const [mobileMenuOpen, NewMenuState] = useState(false);
+  const [mobileMenuOpen, newMenuState] = useState(false);
   const scrollPosition = useScrollPosition(0);
   const closeWhenScroll = () => {
     setTimeout(() => {
@@ -19,13 +19,20 @@ export default function Header(props) {
     if (keyCode !== 27) return;
     setCarouselOpen(false);
   };
-  // console.log(props.isHome);
+  const node = useRef()
+  const handleClick = (e) => {
+    if (!node.current.contains(e.target)) {
+       setCarouselOpen(false);
+    }
+  }
   useEffect(() => {
     window.addEventListener('scroll', closeWhenScroll, { passive: true })
     document.addEventListener("keydown", keyHandler);
+    window.addEventListener("mousedown", handleClick);
     return () => {
     window.removeEventListener('scroll', closeWhenScroll)
     document.removeEventListener("keydown", keyHandler);
+    window.removeEventListener("mousedown", handleClick);
   }
   },[carouselOpen])
   const BgHeader = useSpring({ 
@@ -34,14 +41,18 @@ export default function Header(props) {
   })
   return (
     <animated.header
+    ref={node}
     style={BgHeader}>
       <NavBar
-        trigger={() => NewMenuState(!mobileMenuOpen)}
+        trigger={() => newMenuState(!mobileMenuOpen)}
         trigged={mobileMenuOpen}
         workOpener={() => window.innerWidth > 480 ? setCarouselOpen(!carouselOpen) : false}
         workCloser={() => setCarouselOpen(false)}
       />
-      <NavMenu active={mobileMenuOpen} />
+      <NavMenu
+      active={mobileMenuOpen}
+      sideBarCloser={() => newMenuState(false)}
+      />
       <Carousel 
         carouselOpen={carouselOpen}
       />
