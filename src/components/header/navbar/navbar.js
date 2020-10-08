@@ -26,11 +26,6 @@ const NavBar = ({ workOpener1, workCloser1 }) => {
         role="navigation">
         <Link to="/"><img id="logo" alt="Logo" /></Link>
         <MenuItems />
-        {/* <MenuItemsD
-        className={"nav__menu"}
-        workOpener={workOpener1}
-        workCloser={workCloser1}
-        /> */}
         <ToggleBtn
         />
       </nav>

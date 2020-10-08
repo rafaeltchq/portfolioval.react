@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from "wouter";
 import "../header.scss";
 
 const MenuItemsD = ({ workOpener, workCloser, className }) => {
@@ -8,14 +7,14 @@ const MenuItemsD = ({ workOpener, workCloser, className }) => {
 
 
   const MenuItemsDesktop = () => {
-    
     const ListItems = ({ i, nameItem, linkItem }) => {
       return (
         <li className={classSelector(i)}
           onClick={() => {setNewItem(i); workCloser()}}
             >
-            <Link to={`${linkItem}`}
-            className="nav__link">{nameItem}</Link>
+            <a 
+            href={`${linkItem}`}
+            className="nav__link">{nameItem}</a>
           </li>
       )
     }
@@ -53,8 +52,6 @@ const MenuItemsD = ({ workOpener, workCloser, className }) => {
       </ul>
     )
   }
-  // const width = useScreeWidth();
-  
       return (
        <MenuItemsDesktop 
         />

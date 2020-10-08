@@ -1,19 +1,17 @@
 import React, { useContext } from 'react';
-import { Link } from "wouter";
-// import useScreeWidth from '../../hooks/screenwidth';
+// import { Link } from "wouter";
 import { NavbarContext } from "../navbarContext";
 import "../header.scss";
 
 const MenuItemsM = ({ className }) => {
-  // const [ itemSel, setNewItem ] = useState(0)
   const [, newMenuState ] = useContext(NavbarContext);
   const MenuItemsMobile = () => {
     const ListItemsM =({ nameItem, linkItem }) => {
         return (
             <li className="nav__item">
-                <Link to={`${linkItem}`}
+                <a href={`${linkItem}`}
                 onClick={() => newMenuState(false)}
-                className="nav__link">{nameItem}</Link>
+                className="nav__link">{nameItem}</a>
             </li>
         )}
     return (
@@ -29,16 +27,16 @@ const MenuItemsM = ({ className }) => {
        />
        <li
           className="nav__item">
-          <Link
+          <a
           className="nav__link"
-          to="/#myworks"
-          >WORK</Link>
+          href="/#myworks"
+          >WORK</a>
         </li>
         <ListItemsM
        key={2}
         i={2}
         nameItem={"CONTACT"}
-        linkItem={"/#contact"}
+        linkItem={"#contact"}
        />
        <ListItemsM
        key={3}
@@ -48,9 +46,7 @@ const MenuItemsM = ({ className }) => {
        />
        </ul>
     )
-  }
-  // const width = useScreeWidth();
-  
+  }  
       return (
        <MenuItemsMobile />
     );   

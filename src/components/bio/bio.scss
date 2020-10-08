@@ -13,6 +13,12 @@
     max-width: 400px;
     height: auto;
   }
+  #bio {
+    display: block;
+    position: absolute;
+    top: 70%;
+    visibility: hidden;
+  }
   #valenPic:not([src]) {
     content: $valen-pic;
   }

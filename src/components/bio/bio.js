@@ -3,7 +3,8 @@ import "./bio.scss";
 const Bio = () => {
     const [ spanish, setLanguage ] = useState(true)
     return (
-        <div className="intro-text" id="bio">
+        <div className="intro-text">
+        <span id="bio"></span>
             <img id="valenPic" alt="Valentina" />
             <div className="bio-text">
                 <div>
