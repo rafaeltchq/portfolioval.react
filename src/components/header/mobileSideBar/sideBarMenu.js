@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import MenuItemsM from "../navbar/menu-items-mobile";
+import MenuItemsM from "./menu-items-mobile";
 import { useTransition, animated } from "react-spring";
 import "../header.scss";
 import { NavbarContext } from "../../header/navbarContext";
