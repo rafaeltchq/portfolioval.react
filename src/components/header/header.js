@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSpring, animated } from 'react-spring';
+import { NavbarProvider } from "./navbarContext";
 import NavMenu from "./mobileSideBar/sideBarMenu";
 import NavBar from "./navbar/navbar";
 import Carousel from "./slider/slider";
@@ -8,7 +9,6 @@ import "./header.scss";
 
 export default function Header(props) {
   const [ carouselOpen, setCarouselOpen ] = useState(false);
-  const [mobileMenuOpen, newMenuState] = useState(false);
   const scrollPosition = useScrollPosition(0);
   const closeWhenScroll = () => {
     setTimeout(() => {
@@ -40,22 +40,19 @@ export default function Header(props) {
     config: { duration: 100 }
   })
   return (
-    <animated.header
-    ref={node}
-    style={BgHeader}>
-      <NavBar
-        trigger={() => newMenuState(!mobileMenuOpen)}
-        trigged={mobileMenuOpen}
-        workOpener={() => window.innerWidth > 480 ? setCarouselOpen(!carouselOpen) : false}
-        workCloser={() => setCarouselOpen(false)}
-      />
-      <NavMenu
-      active={mobileMenuOpen}
-      sideBarCloser={() => newMenuState(false)}
-      />
-      <Carousel 
-        carouselOpen={carouselOpen}
-      />
-    </animated.header>
+    <NavbarProvider>
+      <animated.header
+      ref={node}
+      style={BgHeader}>
+        <NavBar
+          workOpener1={() => window.innerWidth > 480 ? setCarouselOpen(!carouselOpen) : false}
+          workCloser1={() => setCarouselOpen(false)}
+        />
+        <NavMenu />
+        <Carousel 
+          carouselOpen={carouselOpen}
+        />
+      </animated.header>
+    </NavbarProvider>
   );
 }

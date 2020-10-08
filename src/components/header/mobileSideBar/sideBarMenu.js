@@ -1,12 +1,13 @@
-import React from "react";
-import MenuItems from "../navbar/menu-items";
+import React, { useContext } from "react";
+import MenuItemsM from "../navbar/menu-items-mobile";
 import { useTransition, animated } from "react-spring";
 import "../header.scss";
+import { NavbarContext } from "../../header/navbarContext";
 // import { Transition } from "react-spring/renderprops";
 
-const NavMenu = (props) => {
-
-  const efecto = useTransition(props.active, null, {
+const NavMenu = () => {
+  const [ mobileMenuOpen ] = useContext(NavbarContext);
+  const efecto = useTransition(mobileMenuOpen, null, {
     from: {
       transform: "translateX(-1000px) scaleX(2.5) scaleY(0.2)",
         "transformOrigin": "100% 50%",
@@ -38,8 +39,8 @@ const NavMenu = (props) => {
         tabindex="-1"
         aria-label="main navigation"
       >
-      <MenuItems className={"nav__menu__sidebar"}
-        sideBarCloser={props.sideBarCloser}
+      <MenuItemsM
+        className={"nav__menu__sidebar"}
       />
       </animated.div>
     )
