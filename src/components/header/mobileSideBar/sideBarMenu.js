@@ -3,7 +3,6 @@ import MenuItemsM from "./menu-items-mobile";
 import { useTransition, animated } from "react-spring";
 import "../header.scss";
 import { NavbarContext } from "../../header/navbarContext";
-// import { Transition } from "react-spring/renderprops";
 
 const NavMenu = () => {
   const { sideBarMenu } = useContext(NavbarContext);

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { NavbarContext } from "../../header/navbarContext";
-// import { useSpring, animated } from "react-spring";
 import "./toggleButton.scss";
 import { ReactComponent as Burger } from "./burger.svg";
 

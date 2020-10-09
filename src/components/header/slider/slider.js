@@ -42,7 +42,7 @@ const Carousel = (props) => {
                         },
                     }}
             >
-                {Items.map(( data, key ) => {
+                {Items.map(( data ) => {
                     return (
                     <SwiperSlide key={data.id}>
                         <SliderItems 

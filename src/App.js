@@ -3,19 +3,28 @@ import Header from "./components/header/header";
 import Home from "./components/pages/home";
 import Footer from "./components/footer/footer";
 import ProjectPage from "./components/pages/projects";
-import { Route, Switch } from "wouter";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 function App() {
+  // let { id } = useParams()
+  // console.log(id);
   return (
-    <>
+    <Router>
       <Header />
       <Switch>
-        <Route path="/" component={Home} ></Route>
-        <Route path="/:name" component={ProjectPage}></Route>
+        <Route exact path="/"
+        // component={Home}
+        >
+        <Home />
+        </Route>
+        <Route path="/:name"
+        >
+        <ProjectPage />
+        </Route>
       </Switch>
       <Footer />
-    </>
+    </Router>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { NavbarContext } from "../navbarContext";
+import { HashLink as Link } from 'react-router-hash-link';
 import "../header.scss";
 
 const MenuItemsD = ({ workOpener, workCloser, className }) => {
@@ -12,6 +13,7 @@ const MenuItemsD = ({ workOpener, workCloser, className }) => {
       setNewItem(1)
     }
   },[location, setNewItem]);
+  // console.log(location);
   const classSelector = i => itemSel === i ? "nav__item land" : "nav__item";
   const workButtonClickHandler = () => {
     setNewItem(1);
