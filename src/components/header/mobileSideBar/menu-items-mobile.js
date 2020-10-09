@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import { Link } from "wouter";
+import { Link} from "wouter";
 import { NavbarContext } from "../navbarContext";
 import "../header.scss";
 
@@ -9,9 +9,9 @@ const MenuItemsM = ({ className }) => {
     const ListItemsM =({ nameItem, linkItem }) => {
         return (
             <li className="nav__item">
-                <a href={`${linkItem}`}
+                <Link href={`${linkItem}`}
                 onClick={() => newMenuState(false)}
-                className="nav__link">{nameItem}</a>
+                className="nav__link">{nameItem}</Link>
             </li>
         )}
     return (

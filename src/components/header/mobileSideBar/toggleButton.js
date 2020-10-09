@@ -5,7 +5,8 @@ import "./toggleButton.scss";
 import { ReactComponent as Burger } from "./burger.svg";
 
 export default function ToggleBtn() {
-  const [ mobileMenuOpen, newMenuState ] = useContext(NavbarContext);
+  const { sideBarMenu } = useContext(NavbarContext);
+  const [ mobileMenuOpen, newMenuState ] = sideBarMenu;
   return (
     <button onClick={() => newMenuState(!mobileMenuOpen)} className="nav__toggle">
     <Burger className={!mobileMenuOpen ? "menuicon" : "menuicon trigged"} />

@@ -6,7 +6,8 @@ import { NavbarContext } from "../../header/navbarContext";
 // import { Transition } from "react-spring/renderprops";
 
 const NavMenu = () => {
-  const [ mobileMenuOpen ] = useContext(NavbarContext);
+  const { sideBarMenu } = useContext(NavbarContext);
+  const [ mobileMenuOpen, ] = sideBarMenu;
   const efecto = useTransition(mobileMenuOpen, null, {
     from: {
       transform: "translateX(-1000px) scaleX(2.5) scaleY(0.2)",

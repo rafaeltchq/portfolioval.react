@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { Link, useLocation } from "wouter";
+import { NavbarContext } from "../navbarContext";
 import "../header.scss";
 
 const MenuItemsD = ({ workOpener, workCloser, className }) => {
-  const [ itemSel, setNewItem ] = useState(0)
+  const { classSelectorNavbar } = useContext(NavbarContext);
+  const [ itemSel, setNewItem ] = classSelectorNavbar;
+  const [ location, ] = useLocation();
+  useEffect(() => {
+    if (location !== "/") {
+      setNewItem(1)
+    }
+  },[location, setNewItem]);
   const classSelector = i => itemSel === i ? "nav__item land" : "nav__item";
-
-
+  const workButtonClickHandler = () => {
+    setNewItem(1);
+      workOpener();
+    }
   const MenuItemsDesktop = () => {
     const ListItems = ({ i, nameItem, linkItem }) => {
       return (
         <li className={classSelector(i)}
           onClick={() => {setNewItem(i); workCloser()}}
             >
-            <a 
-            href={`${linkItem}`}
-            className="nav__link">{nameItem}</a>
+            <Link 
+            to={`${linkItem}`}
+            className="nav__link">{nameItem}</Link>
           </li>
       )
     }
@@ -29,19 +40,18 @@ const MenuItemsD = ({ workOpener, workCloser, className }) => {
         />
         <li
           className={classSelector(1)}
-          onClick={() => setNewItem(1)}
           aria-expanded="false"
           aria-controls="menu">
           <button
           className="nav__link"
-          onClick={workOpener}
+          onClick={workButtonClickHandler}
           >WORK</button>
         </li>
         <ListItems
           key={2}
           i={2}
           nameItem={"CONTACT"}
-          linkItem={"/#contact"}
+          linkItem={"#contact"}
         />
         <ListItems
           key={3}

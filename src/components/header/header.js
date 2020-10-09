@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSpring, animated } from 'react-spring';
 import { NavbarProvider } from "./navbarContext";
+import { useLocation } from "wouter";
 import NavMenu from "./mobileSideBar/sideBarMenu";
 import NavBar from "./navbar/navbar";
 import Carousel from "./slider/slider";
 import useScrollPosition from "../hooks/scrollposition";
 import "./header.scss";
 
-export default function Header(props) {
+export default function Header() {
   const [ carouselOpen, setCarouselOpen ] = useState(false);
+  const [ location, ] = useLocation();
   const scrollPosition = useScrollPosition(0);
   const closeWhenScroll = () => {
     setTimeout(() => {
@@ -36,7 +38,7 @@ export default function Header(props) {
   }
   },[carouselOpen])
   const BgHeader = useSpring({ 
-    background: (scrollPosition <= 0) && !carouselOpen && props.isHome ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.6)",
+    background: (scrollPosition <= 0) && !carouselOpen && (location === "/") ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.6)",
     config: { duration: 100 }
   })
   return (
