@@ -5,7 +5,6 @@ import { Slug, Fade } from './Primitives'
 import data from './data'
 import './styles.css'
 import 'antd/dist/antd.css'
-// import { Icon } from 'antd'
 import { CloseOutlined } from '@ant-design/icons';
 
 class Cell extends Component {
