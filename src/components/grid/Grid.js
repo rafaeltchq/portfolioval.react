@@ -4,7 +4,7 @@ import Measure from 'react-measure'
 import { Transition, animated, interpolate } from 'react-spring/renderprops'
 
 const styles = {
-  outer: { position: 'relative', width: '100%', height: 'calc(100vh - 16px)' },
+  outer: { position: 'relative', width: '80%', height: 'calc(100vh - 16px)', margin: '0 auto' },
   inner: {
     position: 'relative',
     width: '100%',

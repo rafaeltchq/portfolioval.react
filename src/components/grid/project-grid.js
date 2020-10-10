@@ -2,23 +2,26 @@ import React, { Component } from 'react'
 import { config } from 'react-spring/renderprops'
 import Grid from './Grid'
 import { Slug, Fade } from './Primitives'
-import data from './data'
+import data from './datos'
 import './styles.css'
+import './grid.scss'
 import 'antd/dist/antd.css'
 import { CloseOutlined } from '@ant-design/icons';
 
 class Cell extends Component {
   render() {
-    const { toggle, name, description, css, active } = this.props
+    const { toggle, name, description, id, active } = this.props
     return (
       <div
-        className="cell"
-        style={{ backgroundImage: css, cursor: !active ? 'pointer' : 'auto' }}
+        className={`cell cover-post-${id}`}
+        style={{
+          //  backgroundImage: css, 
+           cursor: !active ? 'pointer' : 'auto' }}
         onClick={!active ? toggle : undefined}>
         <Fade show={active} delay={active ? 500 : 0}>
           <div className="details">
             <Slug delay={600}>
-              <div className="circle" style={{ background: css }} />
+              {/* <div className="circle" style={{ background: css }} /> */}
               <div className="close">
                 <CloseOutlined
                   type="close"
