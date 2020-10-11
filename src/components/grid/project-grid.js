@@ -3,25 +3,24 @@ import { config } from 'react-spring/renderprops'
 import Grid from './Grid'
 import { Slug, Fade } from './Primitives'
 import data from './datos'
-import './styles.css'
-import './grid.scss'
+import { CloseOutlined, LogoutOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import './styles.scss'
 import 'antd/dist/antd.css'
-import { CloseOutlined } from '@ant-design/icons';
 
 class Cell extends Component {
   render() {
-    const { toggle, name, description, id, active } = this.props
+    const { toggle, name, title, description, id, active } = this.props
     return (
       <div
-        className={`cell cover-post-${id}`}
-        style={{
-          //  backgroundImage: css, 
+        className="cell"
+        style={{ 
            cursor: !active ? 'pointer' : 'auto' }}
         onClick={!active ? toggle : undefined}>
+        <div className={`cover-post-${id}`}/>
         <Fade show={active} delay={active ? 500 : 0}>
           <div className="details">
             <Slug delay={600}>
-              {/* <div className="circle" style={{ background: css }} /> */}
               <div className="close">
                 <CloseOutlined
                   type="close"
@@ -29,8 +28,15 @@ class Cell extends Component {
                   onClick={toggle}
                 />
               </div>
-              <h1>{name}</h1>
-              <p>{description}</p>
+              <div className='details-project'>
+              <h1>{title}</h1>
+              <p>{description}</p></div>
+              <Link
+                className='details-goto'
+                to={`/${name}`}
+              >
+              <LogoutOutlined
+              /></Link>
             </Slug>
           </div>
         </Fade>
@@ -41,7 +47,7 @@ class Cell extends Component {
           leave={{ opacity: 0, transform: 'translate3d(0,-50px,0)' }}
           delay={active ? 0 : 400}>
           <div className="default">
-            <div style={{ zIndex: 1 }}>{name}</div>
+            <div style={{ zIndex: 1 }}>{title}</div>
           </div>
         </Fade>
       </div>
