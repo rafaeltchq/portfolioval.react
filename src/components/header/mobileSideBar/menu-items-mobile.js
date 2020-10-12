@@ -4,7 +4,8 @@ import { NavbarContext } from "../navbarContext";
 import "../header.scss";
 
 const MenuItemsM = ({ className }) => {
-  const [, newMenuState ] = useContext(NavbarContext);
+  const { sideBarMenu } = useContext(NavbarContext);
+  const [, newMenuState ] = sideBarMenu;
   const MenuItemsMobile = () => {
     const ListItemsM =({ nameItem, linkItem }) => {
         return (
