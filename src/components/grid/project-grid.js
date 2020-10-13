@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { config } from 'react-spring/renderprops'
 import Grid from './Grid'
 import { Slug, Fade } from './Primitives'
-import data from './datos'
+import data from '../projects/projects-data'
 import { CloseOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import './styles.scss'
-import 'antd/dist/antd.css'
+import './styles.scss';
+import 'antd/dist/antd.css';
 
 class Cell extends Component {
   render() {

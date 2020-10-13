@@ -7,18 +7,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 function App() {
-  // let { id } = useParams()
-  // console.log(id);
   return (
     <Router>
       <Header />
       <Switch>
         <Route exact path="/"
-        // component={Home}
         >
         <Home />
         </Route>
-        <Route path="/:name"
+        <Route path="/:projectName"
         >
         <ProjectPage />
         </Route>

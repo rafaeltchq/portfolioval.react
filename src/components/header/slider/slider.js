@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { useSpring, animated } from 'react-spring';
 import 'swiper/swiper.scss';
-import Datos from "../../../img/projects.json";
+import data from "../../projects/projects-data";
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
@@ -12,11 +12,8 @@ import "./dropdown.scss";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Carousel = (props) => {
-    const Items = Datos.projectsId
-    const Falling = useSpring({ height: props.carouselOpen ? "212px" : "0px"})
-
-
-
+    const Items = data;
+    const Falling = useSpring({ height: props.carouselOpen ? "212px" : "0px"});
     return (
         <animated.div className="dropdown_menu" style={Falling}>
             <Swiper
@@ -48,7 +45,7 @@ const Carousel = (props) => {
                         <SliderItems 
                             name={data.name}
                             id={data.id}
-                            title={data.Title}>
+                            title={data.title}>
                         </SliderItems>
                     </SwiperSlide>
                     )

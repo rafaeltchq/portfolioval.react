@@ -1,8 +1,0 @@
-@import "../../scss/img-post";
-@import "../../scss/mixins";
-
-@each $index, $cover in $projects {
-    .cover-post-#{$index}:not([src]) {
-      @include portada($cover);
-    }
-}

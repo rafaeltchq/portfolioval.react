@@ -83,8 +83,6 @@
         &-works:not([src]) {
             content: $works-mobile;
             max-width: 90%;
-            // width
-            // top: 16%
         }
         .left-roll {
             left: 2rem;
@@ -103,7 +101,6 @@
                 position: relative;
                 opacity: 1;
                 overflow: hidden;
-                // height: 40px;
                 top: 0;
                 left: 0;
                 transform: translate(0, 0);
