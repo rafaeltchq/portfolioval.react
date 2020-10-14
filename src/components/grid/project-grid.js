@@ -47,7 +47,7 @@ class Cell extends Component {
           leave={{ opacity: 0, transform: 'translate3d(0,-50px,0)' }}
           delay={active ? 0 : 400}>
           <div className="default">
-            <div style={{ zIndex: 1 }}>{title}</div>
+            <div className="default-title" style={{ zIndex: 1 }}>{title}</div>
           </div>
         </Fade>
       </div>
@@ -66,9 +66,9 @@ export default class ProjectGrid extends Component {
         // Key accessor, instructs grid on how to fet individual keys from the data set
         keys={d => d.name}
         // Can be a fixed value or an individual data accessor
-        heights={d => d.height}
+        heights={260}
         // Number of columns
-        columns={2}
+        // columns={2}
         // Space between elements
         margin={30}
         // Removes the possibility to scroll away from a maximized element

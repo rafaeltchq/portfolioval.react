@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Measure from 'react-measure'
-import { Transition, animated, interpolate } from 'react-spring/renderprops'
-
+import { Transition, animated, interpolate } from 'react-spring/renderprops';
 const styles = {
   outer: { position: 'relative' },
   inner: {
     position: 'relative',
     width: '100%',
-    overflow: 'hidden',
     minHeight: '100%',
   },
   cell: {
     position: 'absolute',
     willChange: 'transform, width, height, opacity',
+    backgroundColor: 'white',
+    // zIndex: 100,
   },
 }
 
@@ -22,6 +22,7 @@ export default class Grid extends React.Component {
     data: PropTypes.array,
     keys: PropTypes.func,
     occupySpace: PropTypes.bool,
+    isMobile: PropTypes.bool,
     columns: PropTypes.number,
     margin: PropTypes.number,
     heights: PropTypes.oneOfType([PropTypes.func, PropTypes.number]),
@@ -30,13 +31,39 @@ export default class Grid extends React.Component {
   }
   static defaultProps = {
     occupySpace: true,
-    columns: 3,
     margin: 0,
-    heights: 400,
     lockScroll: false,
     closeDelay: 0,
   }
-  state = { width: 0, height: 0, open: undefined, lastOpen: undefined }
+  state = { 
+    width: 0,
+    height: 257,
+    columns: 2,
+    open: undefined,
+    // lastOpen: undefined,
+    isMobile: undefined,
+    scrollPosition: 0,
+  }
+
+  updateColumns() {
+    if(window.innerWidth > 480) {
+      this.setState({ columns: 2, isMobile: false });
+    } else {
+      this.setState({ columns: 1, isMobile: true });
+    }
+  }
+  updateScrollPosition() {
+    this.setState({ scrollPosition: window.pageYOffset })
+  }
+  componentDidMount() {
+    this.updateColumns();
+    window.addEventListener("resize", this.updateColumns.bind(this));
+    window.addEventListener("scroll", this.updateScrollPosition.bind(this));
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateColumns.bind(this));
+    window.removeEventListener("scroll", this.updateScrollPosition.bind(this));
+  }
   scrollOut = e => {
     if (!this.props.lockScroll) {
       this.state.open && this.toggle(undefined)
@@ -54,7 +81,7 @@ export default class Grid extends React.Component {
   resize = (width, height, props) =>
     this.setState({
       [width]: props.client.width,
-      [height]: props.client.height,
+      [height]: this.state.isMobile ? window.innerHeight : props.client.height,
     })
   resizeOuter = props => this.resize('widthOuter', 'heightOuter', props)
   resizeInner = props => this.resize('width', 'height', props)
@@ -63,7 +90,9 @@ export default class Grid extends React.Component {
     return {
       opacity: this.state.open && !open ? 0 : 1,
       x: open ? this.outerRef.scrollLeft : x,
-      y: open ? this.outerRef.scrollTop : y,
+      y: this.state.isMobile ?
+      (open ? (this.state.scrollPosition - this.outerRef.offsetTop) : y) :
+      (open ? this.outerRef.scrollTop : y),
       width: open ? this.state.width : width,
       height: open ? this.state.heightOuter : height,
     }
@@ -76,7 +105,7 @@ export default class Grid extends React.Component {
   render() {
     let {
       children,
-      columns,
+      // columns,
       margin,
       occupySpace,
       impl,
@@ -88,7 +117,7 @@ export default class Grid extends React.Component {
       lockScroll,
       ...rest
     } = this.props
-    let { lastOpen, open, width } = this.state
+    let { open, width, columns } = this.state
     let column = 0
     let columnHeights = new Array(columns).fill(0)
 
@@ -111,7 +140,9 @@ export default class Grid extends React.Component {
         object: child,
       }
     })
-    const overflow = lockScroll ? (open ? 'hidden' : 'auto') : 'auto'
+    const overflow = this.state.isMobile ?
+        (lockScroll ? (open ? 'hidden' : 'visible') : 'visible')
+      : (lockScroll ? (open ? 'hidden' : 'auto') : 'auto')
     const height = Math.max(...columnHeights) + margin
     return (
       <Measure
@@ -153,7 +184,8 @@ export default class Grid extends React.Component {
                           width,
                           height,
                           zIndex:
-                            lastOpen === c.key || open === c.key ? 1000 : i,
+                            // lastOpen === c.key || 
+                            open === c.key ? 250 : 100,
                           transform: interpolate(
                             [x, y],
                             (x, y) => `translate3d(${x}px,${y}px, 0)`
