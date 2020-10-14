@@ -28,7 +28,8 @@ const WorksBanner = () => {
         config: config.stiff
     })
     return (
-        <div className="banner-1" id="my-work" ref={ref}>
+        <div className="banner-1" ref={ref}>
+        <span id="my-work" ></span>
             <animated.img className="banner-1-works" alt="My works" style={inFromLeft}/>
         </div>
     );
