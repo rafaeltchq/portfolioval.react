@@ -38,7 +38,7 @@ export default function Header() {
   }
   },[carouselOpen])
   const BgHeader = useSpring({ 
-    background: (scrollPosition <= 0) && !carouselOpen && (location === "/") ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.6)",
+    backgroundColor: (scrollPosition <= 0) && !carouselOpen && (location === "/") ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.6)",
     config: { duration: 100 }
   })
   return (
