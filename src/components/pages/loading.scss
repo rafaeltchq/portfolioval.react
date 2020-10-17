@@ -1,0 +1,11 @@
+@import "../../scss/img-post";
+@import "../../scss/mixins";
+
+._loading_overlay_overlay {
+    width: 100%;
+    height: 100vh;
+}
+._loading_overlay_content,
+._loading_overlay_spinner {
+    color: $fontColour;
+}

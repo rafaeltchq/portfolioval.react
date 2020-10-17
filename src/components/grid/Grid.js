@@ -45,24 +45,25 @@ export default class Grid extends React.Component {
     scrollPosition: 0,
   }
 
-  updateColumns() {
+  updateColumns = () => {
     if(window.innerWidth > 480) {
       this.setState({ columns: 2, isMobile: false });
     } else {
       this.setState({ columns: 1, isMobile: true });
     }
   }
-  updateScrollPosition() {
+  updateScrollPosition = () => {
     this.setState({ scrollPosition: window.pageYOffset })
   }
   componentDidMount() {
     this.updateColumns();
-    window.addEventListener("resize", this.updateColumns.bind(this));
-    window.addEventListener("scroll", this.updateScrollPosition.bind(this));
+    this.updateScrollPosition();
+    window.addEventListener("resize", this.updateColumns);
+    window.addEventListener("scroll", this.updateScrollPosition, { passive: true });
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateColumns.bind(this));
-    window.removeEventListener("scroll", this.updateScrollPosition.bind(this));
+    window.removeEventListener("resize", this.updateColumns);
+    window.removeEventListener("scroll", this.updateScrollPosition);
   }
   scrollOut = e => {
     if (!this.props.lockScroll) {

@@ -6,7 +6,6 @@ import data from '../projects/projects-data'
 import { CloseOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import './styles.scss';
-import 'antd/dist/antd.css';
 
 class Cell extends Component {
   render() {

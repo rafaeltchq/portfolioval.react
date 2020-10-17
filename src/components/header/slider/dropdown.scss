@@ -15,6 +15,9 @@
         }
         .swiper-pagination {
             margin-bottom: 0.8rem;
+            &-bullet {
+                background: white;
+            }
         }
         .swiper-slide {
             text-align: center;

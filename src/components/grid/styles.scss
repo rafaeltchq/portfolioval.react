@@ -63,6 +63,7 @@
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
     padding: 2px;
+    margin: 30px;
     h1 {
       color: #777777;
       // filter: invert(1);
@@ -71,7 +72,7 @@
       font-weight: 600;
       margin: 0;
       padding: 0;
-      max-width: 80px;
+      max-width: fit-content;
     }
     p {
       color: #999999;
@@ -81,12 +82,11 @@
       padding-top: 6px;
     }
   }
-
   &-goto {
     display: inline-block;
     text-decoration: none;
     color: #777777;
-    margin: 10px;
+    margin: 30px;
     font-size: 40px;
     background-color: rgba(255,255,255,0.7);
     border-radius: 50%;
@@ -99,12 +99,32 @@
 }
 .close {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 60px;
+  right: 60px;
   font-size: 20px;
   color: #777777;
 }
-
+.anticon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  & svg {
+    display: inline-block;
+  }
+  & > * {
+    line-height: 1;
+  }
+  & svg:not(:root) {
+    overflow: hidden;
+  }
+}
 .grid {
   width: 80%;
   max-width: $vw-width;
@@ -136,5 +156,19 @@
     & div {
       overflow: visible;
     }
+  }
+  .details {
+    &-project {
+      margin: 10px;
+    }
+    &-goto {
+      font-size: 50px;
+      margin: 30px 45px;
+    }
+  }
+  .close {
+    font-size: 30px;
+    top: 70px;
+    right: 70px;
   }
 }

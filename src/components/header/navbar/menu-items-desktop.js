@@ -52,14 +52,14 @@ const MenuItemsD = ({ workOpener, workCloser, className }) => {
         <ListItems
           key={2}
           i={2}
-          nameItem={"CONTACT"}
-          linkItem={"#contact"}
+          nameItem={"ABOUT"}
+          linkItem={"/#bio"}
         />
         <ListItems
           key={3}
           i={3}
-          nameItem={"ABOUT"}
-          linkItem={"/#bio"}
+          nameItem={"CONTACT"}
+          linkItem={"#contact"}
         />
       </ul>
     )
