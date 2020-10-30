@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/portfolioval.react/static/css/main.2d2659fe.chunk.css",
+    "main.js": "/portfolioval.react/static/js/main.8df371b4.chunk.js",
+    "main.js.map": "/portfolioval.react/static/js/main.8df371b4.chunk.js.map",
+    "runtime-main.js": "/portfolioval.react/static/js/runtime-main.0f42de18.js",
+    "runtime-main.js.map": "/portfolioval.react/static/js/runtime-main.0f42de18.js.map",
+    "static/css/2.07178582.chunk.css": "/portfolioval.react/static/css/2.07178582.chunk.css",
+    "static/js/2.a0e11401.chunk.js": "/portfolioval.react/static/js/2.a0e11401.chunk.js",
+    "static/js/2.a0e11401.chunk.js.map": "/portfolioval.react/static/js/2.a0e11401.chunk.js.map",
+    "index.html": "/portfolioval.react/index.html",
+    "static/css/2.07178582.chunk.css.map": "/portfolioval.react/static/css/2.07178582.chunk.css.map",
+    "static/css/main.2d2659fe.chunk.css.map": "/portfolioval.react/static/css/main.2d2659fe.chunk.css.map",
+    "static/js/2.a0e11401.chunk.js.LICENSE.txt": "/portfolioval.react/static/js/2.a0e11401.chunk.js.LICENSE.txt",
+    "static/media/mainBanner.scss": "/portfolioval.react/static/media/bannermobile480.338b962b.jpg",
+    "static/media/projects-styles.scss": "/portfolioval.react/static/media/yumlato1920.91648cc8.jpg",
+    "static/media/dropdown.scss": "/portfolioval.react/static/media/yumlatoCover480.abeb7f58.jpg",
+    "static/media/styles.scss": "/portfolioval.react/static/media/yumlatoCover960.39e006f4.jpg",
+    "static/media/myworks.scss": "/portfolioval.react/static/media/myworks-19.9b8b2329.png",
+    "static/media/burger.fd5a949c.svg": "/portfolioval.react/static/media/burger.fd5a949c.svg",
+    "static/media/bio.scss": "/portfolioval.react/static/media/foto-avatar-588.ac1c6191.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f42de18.js",
+    "static/css/2.07178582.chunk.css",
+    "static/js/2.a0e11401.chunk.js",
+    "static/css/main.2d2659fe.chunk.css",
+    "static/js/main.8df371b4.chunk.js"
+  ]
+}
