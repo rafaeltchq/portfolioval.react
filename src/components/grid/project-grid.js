@@ -75,7 +75,7 @@ export default class ProjectGrid extends Component {
         // Delay when active elements (blown up) are minimized again
         closeDelay={500}
         // Regular react-spring configs
-        config={config.slow}>
+        config={config.default}>
         {(data, active, toggle) => (
           <Cell {...data} active={active} toggle={toggle} />
         )}
