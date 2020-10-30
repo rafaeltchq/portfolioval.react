@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <Router basename="/portfolioval.react/">
+    <Router basename="/portfolioval.react">
       <Header />
       <Switch>
         <Route exact path="/">
