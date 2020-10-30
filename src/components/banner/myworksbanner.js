@@ -10,7 +10,7 @@ const WorksBanner = () => {
         setSrollPosition(position)
     }
     const leftRoll = () => {
-        if (scrollPosition >= ref.current.offsetTop) {
+        if (scrollPosition >= ref.current.clientTop) {
             setIsHere(true)
         }
     }

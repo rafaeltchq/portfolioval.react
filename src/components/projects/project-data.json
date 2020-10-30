@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "name": "Yum",
+        "title": "Project: YumBox App Mobile",
+        "description": "UX/UI Design - Brand Design - Graphic Design",
+        "ratio": 0.2485
+    },
+    {
+        "id": "2",
+        "name": "STB",
+        "title": "Project: Lookbook Redesign",
+        "description": "UI Design",
+        "ratio": 0.3437
+    },
+    {
+        "id": "3",
+        "name": "SDO",
+        "title": "Project: Season Redesign",
+        "description": "UX/UI Design - Brand Design - Graphic Design",
+        "ratio": 0.4847
+    },
+    {
+        "id": "4",
+        "name": "Colores",
+        "title": "Project: Editorial Libro de los Colores",
+        "description": "Editorial Design - Graphic Design",
+        "ratio": 0.3902
+    },
+    {
+        "id": "5",
+        "name": "HCB",
+        "title": "Project: Newsletter Sketch",
+        "description": "UI Design",
+        "ratio": 0.3743
+    },
+    {
+        "id": "6",
+        "name": "Calza",
+        "title": "Project: Web Design",
+        "description": "UX/UI Design - Creation",
+        "ratio": 0.3840
+    },
+    {
+        "id": "7",
+        "name": "Malteadas",
+        "title": "Project: Brand Identity",
+        "description": "url Creation - UX/UI Design - Art Director",
+        "ratio": 0.4159
+    },
+    {
+        "id": "8",
+        "name": "Bonf",
+        "title": "Project: Corporate Manual",
+        "description": "Editorial Design - Graphic Design",
+        "ratio": 0.5565
+    },
+    {
+        "id": "9",
+        "name": "CHH",
+        "title": "Project: Logo Design",
+        "description": "Personal brand - Graphic Design",
+        "ratio": 0.7106
+    },
+    {
+        "id": "10",
+        "name": "Yumlato",
+        "title": "Project: Brand Identity",
+        "description": "Graphic proposal - Graphic Design",
+        "ratio": 0.4576
+    }
+]

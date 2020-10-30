@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useLocation } from "wouter";
+import { useLocation } from "react-router-dom";
 import { NavbarContext } from "../navbarContext";
 import { HashLink as Link } from 'react-router-hash-link';
 import "../header.scss";
@@ -7,13 +7,12 @@ import "../header.scss";
 const MenuItemsD = ({ workOpener, workCloser, className }) => {
   const { classSelectorNavbar } = useContext(NavbarContext);
   const [ itemSel, setNewItem ] = classSelectorNavbar;
-  const [ location, ] = useLocation();
+  const location = useLocation();
   useEffect(() => {
-    if (location !== "/") {
+    if (location.pathname !== "/") {
       setNewItem(1)
     }
-  },[location, setNewItem]);
-  // console.log(location);
+  },[location.pathname, setNewItem]);
   const classSelector = i => itemSel === i ? "nav__item land" : "nav__item";
   const workButtonClickHandler = () => {
     setNewItem(1);
@@ -42,8 +41,7 @@ const MenuItemsD = ({ workOpener, workCloser, className }) => {
         />
         <li
           className={classSelector(1)}
-          aria-expanded="false"
-          aria-controls="menu">
+          >
           <button
           className="nav__link"
           onClick={workButtonClickHandler}

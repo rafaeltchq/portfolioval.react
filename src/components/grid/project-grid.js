@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { config } from 'react-spring/renderprops'
 import Grid from './Grid'
 import { Slug, Fade } from './Primitives'
-import data from '../projects/projects-data'
+import data from '../projects/project-data.json'
 import { CloseOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import './styles.scss';

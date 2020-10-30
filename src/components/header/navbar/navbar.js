@@ -18,8 +18,7 @@ const NavBar = ({ workOpener1, workCloser1 }) => {
         />
       )
     } else return null
-  } 
-
+  }
     return (
         <nav
         className={scrollPosition > 10 ? "nav dropdown scrolled" : "nav dropdown"}
